@@ -1,0 +1,232 @@
+// =============================================================================
+// simple_cpu_pipelined_tb.sv
+// Plain, self-checking directed testbench for the RV32I-subset pipelined CPU.
+// No UVM -- this is a fast sanity pass to confirm the RTL itself is correct
+// before any verification environment gets built around it.
+//
+// Program (word index : byte address : instruction):
+//   0  : 0  : ADDI x1, x0, 5          x1 = 5
+//   1  : 4  : ADDI x2, x1, 3          x2 = 8      (EX/EX forward on x1)
+//   2  : 8  : ADD  x3, x2, x1         x3 = 13     (EX/EX fwd x2, MEM/EX fwd x1)
+//   3  : 12 : LW   x4, x0, 0          x4 = data_mem[0] (preloaded = 100)
+//   4  : 16 : ADD  x5, x4, x3         x5 = 113    (LOAD-USE HAZARD: 1 stall)
+//   5  : 20 : SW   x5, x0, 4          data_mem[1] = 113  (store-data forward)
+//   6  : 24 : BEQ  x1, x1, +12        always taken -> jump to word 9 (byte 36)
+//   7  : 28 : ADDI x6, x0, 9          MUST BE FLUSHED
+//   8  : 32 : ADDI x6, x0, 8          MUST BE FLUSHED
+//   9  : 36 : ADDI x7, x0, 7          x7 = 7   (branch landing point)
+//   10 : 40 : LUI  x8, 0x12345        x8 = 0x12345000
+//   11 : 44 : JAL  x9, +8             x9 = 48 (link = pc+4), jump to word 13 (byte 52)
+//   12 : 48 : ADDI x10, x0, 111       MUST BE FLUSHED
+//   13 : 52 : ADDI x11, x0, 42        x11 = 42  (jump landing point)
+//   14 : 56 : ADDI x0, x0, 99         x0 must stay 0 (hardwired)
+//   15 : 60 : ECALL                   halt
+//
+// Expected final state:
+//   x1=5 x2=8 x3=13 x4=100 x5=113 x6=0 x7=7 x8=0x12345000 x9=48
+//   x10=0 x11=42 x0=0   data_mem[1] = 113
+// =============================================================================
+
+module simple_cpu_pipelined_tb;
+
+  logic clk, rst_n, halt;
+  logic [31:0] pc_out;
+
+  simple_cpu_pipelined dut (
+    .clk    (clk),
+    .rst_n  (rst_n),
+    .halt   (halt),
+    .pc_out (pc_out)
+  );
+
+  initial clk = 0;
+  always #5 clk = ~clk;
+
+  // ---------------------------------------------------------------------
+  // RV32I encoding helpers
+  // ---------------------------------------------------------------------
+  localparam logic [6:0] OP      = 7'b0110011;
+  localparam logic [6:0] OP_IMM  = 7'b0010011;
+  localparam logic [6:0] LOAD    = 7'b0000011;
+  localparam logic [6:0] STORE   = 7'b0100011;
+  localparam logic [6:0] BRANCH  = 7'b1100011;
+  localparam logic [6:0] LUI     = 7'b0110111;
+  localparam logic [6:0] JAL     = 7'b1101111;
+  localparam logic [6:0] SYSTEM  = 7'b1110011;
+
+  localparam logic [2:0] F3_ADD_SUB_ADDI = 3'b000;
+  localparam logic [2:0] F3_AND          = 3'b111;
+  localparam logic [2:0] F3_OR           = 3'b110;
+  localparam logic [2:0] F3_LW_SW        = 3'b010;
+  localparam logic [2:0] F3_BEQ          = 3'b000;
+
+  localparam logic [6:0] F7_ADD = 7'b0000000;
+  localparam logic [6:0] F7_SUB = 7'b0100000;
+
+  function automatic [31:0] r_type(bit [6:0] opcode, bit [4:0] rd, bit [2:0] funct3,
+                                    bit [4:0] rs1, bit [4:0] rs2, bit [6:0] funct7);
+    return {funct7, rs2, rs1, funct3, rd, opcode};
+  endfunction
+
+  function automatic [31:0] i_type(bit [6:0] opcode, bit [4:0] rd, bit [2:0] funct3,
+                                    bit [4:0] rs1, bit signed [11:0] imm);
+    return {imm, rs1, funct3, rd, opcode};
+  endfunction
+
+  function automatic [31:0] s_type(bit [6:0] opcode, bit [2:0] funct3,
+                                    bit [4:0] rs1, bit [4:0] rs2, bit signed [11:0] imm);
+    return {imm[11:5], rs2, rs1, funct3, imm[4:0], opcode};
+  endfunction
+
+  function automatic [31:0] b_type(bit [6:0] opcode, bit [2:0] funct3,
+                                    bit [4:0] rs1, bit [4:0] rs2, bit signed [12:0] imm);
+    return {imm[12], imm[10:5], rs2, rs1, funct3, imm[4:1], imm[11], opcode};
+  endfunction
+
+  function automatic [31:0] u_type(bit [6:0] opcode, bit [4:0] rd, bit [19:0] imm20);
+    return {imm20, rd, opcode};
+  endfunction
+
+  function automatic [31:0] j_type(bit [6:0] opcode, bit [4:0] rd, bit signed [20:0] imm);
+    return {imm[20], imm[10:1], imm[11], imm[19:12], rd, opcode};
+  endfunction
+
+  localparam [31:0] INSTR_ECALL = 32'h0000_0073;
+  localparam [31:0] INSTR_NOP = 32'h0000_0013; // ADDI x0, x0, 0
+  
+  // ---------------------------------------------------------------------
+  // Program load + data preload
+  // ---------------------------------------------------------------------
+initial begin
+  // Initialize full memories first.
+  // This prevents X instructions/data if PC or memory address goes somewhere unexpected.
+  for (int i = 0; i < 256; i++) begin
+    dut.instr_mem[i] = INSTR_NOP;
+    dut.data_mem[i]  = 32'b0;
+  end
+    dut.instr_mem[0]  = i_type(OP_IMM, 5'd1, F3_ADD_SUB_ADDI, 5'd0, 12'sd5);
+    dut.instr_mem[1]  = i_type(OP_IMM, 5'd2, F3_ADD_SUB_ADDI, 5'd1, 12'sd3);
+    dut.instr_mem[2]  = r_type(OP,     5'd3, F3_ADD_SUB_ADDI, 5'd2, 5'd1, F7_ADD);
+    dut.instr_mem[3]  = i_type(LOAD,   5'd4, F3_LW_SW,        5'd0, 12'sd0);
+    dut.instr_mem[4]  = r_type(OP,     5'd5, F3_ADD_SUB_ADDI, 5'd4, 5'd3, F7_ADD);
+    dut.instr_mem[5]  = s_type(STORE,  F3_LW_SW,              5'd0, 5'd5, 12'sd4);
+    dut.instr_mem[6]  = b_type(BRANCH, F3_BEQ,                5'd1, 5'd1, 13'sd12);
+    dut.instr_mem[7]  = i_type(OP_IMM, 5'd6, F3_ADD_SUB_ADDI, 5'd0, 12'sd9);   // flushed
+    dut.instr_mem[8]  = i_type(OP_IMM, 5'd6, F3_ADD_SUB_ADDI, 5'd0, 12'sd8);   // flushed
+    dut.instr_mem[9]  = i_type(OP_IMM, 5'd7, F3_ADD_SUB_ADDI, 5'd0, 12'sd7);
+    dut.instr_mem[10] = u_type(LUI,    5'd8, 20'h12345);
+    dut.instr_mem[11] = j_type(JAL,    5'd9, 21'sd8);
+    dut.instr_mem[12] = i_type(OP_IMM, 5'd10, F3_ADD_SUB_ADDI, 5'd0, 12'sd111); // flushed
+    dut.instr_mem[13] = i_type(OP_IMM, 5'd11, F3_ADD_SUB_ADDI, 5'd0, 12'sd42);
+    dut.instr_mem[14] = i_type(OP_IMM, 5'd0,  F3_ADD_SUB_ADDI, 5'd0, 12'sd99);  // must stay 0
+    dut.instr_mem[15] = INSTR_ECALL;
+
+    dut.data_mem[0] = 32'd100; // LW target
+  end
+
+  // ---------------------------------------------------------------------
+  // Run + self-check
+  // ---------------------------------------------------------------------
+  int pass_count = 0;
+  int fail_count = 0;
+  int cycle_count = 0;
+  bit timed_out = 0;
+  
+  always @(posedge clk) begin
+  if (!rst_n)
+    cycle_count <= 0;
+  else
+    cycle_count <= cycle_count + 1;
+  end
+  
+  task automatic check_reg(int idx, logic [31:0] expected);
+    logic [31:0] actual;
+    actual = dut.regfile[idx];
+    if (actual === expected) begin
+      pass_count++;
+      $display("  PASS x%0d = %0d (0x%08h)", idx, actual, actual);
+    end else begin
+      fail_count++;
+      $display("  FAIL x%0d = %0d (0x%08h), expected %0d (0x%08h)",
+                idx, actual, actual, expected, expected);
+    end
+  endtask
+
+  task automatic check_mem(int word_idx, logic [31:0] expected);
+    logic [31:0] actual;
+    actual = dut.data_mem[word_idx];
+    if (actual === expected) begin
+      pass_count++;
+      $display("  PASS data_mem[%0d] = %0d", word_idx, actual);
+    end else begin
+      fail_count++;
+      $display("  FAIL data_mem[%0d] = %0d, expected %0d", word_idx, actual, expected);
+    end
+  endtask
+
+  initial begin
+    rst_n = 0;
+    timed_out = 0;
+
+    repeat (2) @(posedge clk);
+    rst_n = 1;
+
+    fork
+      begin : wait_halt
+        @(posedge halt);
+        $display("HALT asserted at cycle %0d, pc_out = 0x%08h", cycle_count, pc_out);
+      end
+
+      begin : timeout
+        repeat (500) @(posedge clk);
+        timed_out = 1;
+        $display("TIMEOUT: halt never asserted after 500 cycles");
+      end
+    join_any
+
+    disable fork;
+
+    if (timed_out) begin
+      fail_count++;
+      $display("TEST FAILED: DUT did not reach ECALL/HALT");
+      $display("Final pc_out = 0x%08h", pc_out);
+      $finish;
+    end
+
+    repeat (5) @(posedge clk); // drain pipeline after halt
+
+    $display("========================================================");
+    $display("Register file check:");
+    check_reg(1,  32'd5);
+    check_reg(2,  32'd8);
+    check_reg(3,  32'd13);
+    check_reg(4,  32'd100);
+    check_reg(5,  32'd113);
+    check_reg(6,  32'd0);          // proves the BEQ flush worked
+    check_reg(7,  32'd7);
+    check_reg(8,  32'h12345000);
+    check_reg(9,  32'd48);
+    check_reg(10, 32'd0);          // proves the JAL flush worked
+    check_reg(11, 32'd42);
+    check_reg(0,  32'd0);          // proves x0 stayed hardwired to zero
+
+    $display("Data memory check:");
+    check_mem(1, 32'd113);
+
+    $display("========================================================");
+    $display("RESULT: %0d passed, %0d failed", pass_count, fail_count);
+    if (fail_count == 0)
+      $display("ALL CHECKS PASSED");
+    else
+      $display("SOME CHECKS FAILED");
+    $display("========================================================");
+
+    $finish;
+  end
+
+  initial begin
+    $dumpfile("rv32i_cpu.vcd");
+    $dumpvars(0, simple_cpu_pipelined_tb);
+  end
+
+endmodule
