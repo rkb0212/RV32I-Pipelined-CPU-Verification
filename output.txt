@@ -1,0 +1,851 @@
+[2026-07-11 18:05:49 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+VSIMSA: Configuration file changed: `/home/runner/library.cfg'
+ALIB: Library "work" attached.
+work = ./work/work.lib
+MESSAGE_SP VCP2124 "Package uvm_pkg found in library uvm_1_2."
+MESSAGE "ASRT_7002: Due to optimizations some assertions from source code will be evaluated in non LRM complaint mode. Use switch -ao_off to turn off this optimization."
+MESSAGE "Unit top modules: tb_top."
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time: 6[s]."
+done
+
+===================== RUNNING cpu_hazard_test =====================
+# Aldec, Inc. Riviera-PRO version 2025.04.139.9738 built for Linux64 on May 30, 2025.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2025 Aldec, Inc. All rights reserved.
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "uvm_pkg" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.6 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library '/usr/share/Riviera-PRO/bin/libsystf.so'
+# ELAB2: Create instances ...
+# KERNEL: Info: Loading library:  libgolden
+# KERNEL: Info: Loading library:  /usr/share/Riviera-PRO/bin/uvm_1_2_dpi
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.1 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 43 (74.14%) other processes in SLP
+# SLP: 29 (0.09%) signals in SLP and 153 (0.48%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.9 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Riviera-PRO EDU Edition. The performance of simulation is reduced.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 31611 kB (elbread=2175 elab2=24332 kernel=5103 sdf=0)
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM-1.2
+# KERNEL: (C) 2007-2014 Mentor Graphics Corporation
+# KERNEL: (C) 2007-2014 Cadence Design Systems, Inc.
+# KERNEL: (C) 2006-2014 Synopsys, Inc.
+# KERNEL: (C) 2011-2013 Cypress Semiconductor Corp.
+# KERNEL: (C) 2013-2014 NVIDIA Corporation
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: 
+# KERNEL:   ***********       IMPORTANT RELEASE NOTES         ************
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_NO_DEPRECATED undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# KERNEL: 
+# KERNEL:       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# KERNEL: 
+# KERNEL: ASDB file was created in location /home/runner/dataset.asdb
+# KERNEL: UVM_INFO @ 0: reporter [RNTST] Running test cpu_hazard_test...
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 0: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 1: directed_rv32i_hazard_branch_jump
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Program 1 (directed_rv32i_hazard_branch_jump) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000005  golden=0x00000005  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000008  golden=0x00000008  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x0000000d  golden=0x0000000d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000064  golden=0x00000064  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000071  golden=0x00000071  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000007  golden=0x00000007  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x12345000  golden=0x12345000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000030  golden=0x00000030  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000064  golden=0x00000064  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000071  golden=0x00000071  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 285: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 1 (directed_rv32i_hazard_branch_jump): PASS
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_objection.svh(1271) @ 415: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(575) @ 415: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Scoreboard summary: 1/1 programs matched golden model, mismatches=0
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_report_server.svh(869) @ 415: reporter [UVM/REPORT/SERVER] 
+# KERNEL: --- UVM Report Summary ---
+# KERNEL: 
+# KERNEL: ** Report counts by severity
+# KERNEL: UVM_INFO :   37
+# KERNEL: UVM_WARNING :    0
+# KERNEL: UVM_ERROR :    0
+# KERNEL: UVM_FATAL :    0
+# KERNEL: ** Report counts by id
+# KERNEL: [CPU_DRIVER]     1
+# KERNEL: [CPU_SCOREBOARD]     2
+# KERNEL: [CPU_STATE]    31
+# KERNEL: [RNTST]     1
+# KERNEL: [TEST_DONE]     1
+# KERNEL: [UVM/RELNOTES]     1
+# KERNEL: 
+# RUNTIME: Info: RUNTIME_0068 uvm_root.svh (521): $finish called.
+# KERNEL: Time: 415 ns,  Iteration: 57,  Instance: /tb_top,  Process: @INITIAL#39_1@.
+# KERNEL: stopped at time: 415 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+# KERNEL: ============================================================
+# KERNEL: RV32I SVA ASSERTION SUMMARY
+# KERNEL: AST_HALT_STICKY        failures = 0
+# KERNEL: AST_PC_FREEZE          failures = 0
+# KERNEL: AST_PC_WORD_ALIGNED    failures = 0
+# KERNEL: AST_REDIRECT_FLUSH     failures = 0
+# KERNEL: AST_LOAD_USE_PC_HOLD   failures = 0
+# KERNEL: AST_LOAD_USE_BUBBLE    failures = 0
+# KERNEL: AST_X0_ZERO            failures = 0
+# KERNEL: TOTAL ASSERTION FAILURES = 0
+# KERNEL: ASSERTION RESULT: PASS
+# KERNEL: RV32I SVA COVER EVENT COUNTS
+# KERNEL: COV_BRANCH_TAKEN      count = 1
+# KERNEL: COV_JUMP_TAKEN        count = 1
+# KERNEL: COV_LOAD_USE_STALL    count = 1
+# KERNEL: COV_HALT_REACHED      count = 18
+# KERNEL: COV_STALL_THEN_BRANCH count = 1
+# KERNEL: ============================================================
+# KERNEL: ============================================================
+# KERNEL: RV32I FUNCTIONAL COVERAGE SUMMARY
+# KERNEL: cg_pipeline_events  = 90.62%
+# KERNEL: cg_rv32i_opcodes    = 100.00%
+# KERNEL: cg_rv32i_instrs     = 72.73%
+# KERNEL: cg_forward_paths    = 100.00%
+# KERNEL: Average shown score = 90.84%
+# KERNEL: Note: the official ACDB report may weight coverage differently.
+# KERNEL: ============================================================
+# ACDB: Covergroup Coverage data has been saved to "fcover.acdb" database.
+# VSIM: Simulation has finished.
+
+===================== RUNNING cpu_rand_test =====================
+# Aldec, Inc. Riviera-PRO version 2025.04.139.9738 built for Linux64 on May 30, 2025.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2025 Aldec, Inc. All rights reserved.
+# ELBREAD: Elaboration process.
+# ELBREAD: Warning: ELBREAD_0049 The "uvm_pkg" design unit does not have a time unit/precision defined but other design units do.
+# ELBREAD: Elaboration time 0.6 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library '/usr/share/Riviera-PRO/bin/libsystf.so'
+# ELAB2: Create instances ...
+# KERNEL: Info: Loading library:  libgolden
+# KERNEL: Info: Loading library:  /usr/share/Riviera-PRO/bin/uvm_1_2_dpi
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Finished. Using existing simulator library
+# SLP: 0 primitives and 43 (74.14%) other processes in SLP
+# SLP: 29 (0.09%) signals in SLP and 153 (0.48%) interface signals
+# ELAB2: Elaboration final pass complete - time: 1.8 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Riviera-PRO EDU Edition. The performance of simulation is reduced.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 31611 kB (elbread=2175 elab2=24332 kernel=5103 sdf=0)
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: UVM-1.2
+# KERNEL: (C) 2007-2014 Mentor Graphics Corporation
+# KERNEL: (C) 2007-2014 Cadence Design Systems, Inc.
+# KERNEL: (C) 2006-2014 Synopsys, Inc.
+# KERNEL: (C) 2011-2013 Cypress Semiconductor Corp.
+# KERNEL: (C) 2013-2014 NVIDIA Corporation
+# KERNEL: ----------------------------------------------------------------
+# KERNEL: 
+# KERNEL:   ***********       IMPORTANT RELEASE NOTES         ************
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_NO_DEPRECATED undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# KERNEL: 
+# KERNEL:   You are using a version of the UVM library that has been compiled
+# KERNEL:   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+# KERNEL:   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# KERNEL: 
+# KERNEL:       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# KERNEL: 
+# KERNEL: ASDB file was created in location /home/runner/dataset.asdb
+# KERNEL: UVM_INFO @ 0: reporter [RNTST] Running test cpu_rand_test...
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 0: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 1: rand_rv32i_program_1
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Program 1 (rand_rv32i_program_1) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000015  golden=0x00000015  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x0000001b  golden=0x0000001b  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x0000001b  golden=0x0000001b  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000036  golden=0x00000036  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000063  golden=0x00000063  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000001  golden=0x00000001  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000f  golden=0x0000000f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000004  golden=0x00000004  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000017  golden=0x00000017  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x0000001b  golden=0x0000001b  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 285: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 285: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 1 (rand_rv32i_program_1): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 315: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 2: rand_rv32i_program_2
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] Program 2 (rand_rv32i_program_2) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000014  golden=0x00000014  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000019  golden=0x00000019  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x0000002d  golden=0x0000002d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x0000002d  golden=0x0000002d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x0000005a  golden=0x0000005a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000002  golden=0x00000002  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x00000005  golden=0x00000005  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x0000001d  golden=0x0000001d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x0000002d  golden=0x0000002d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 615: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 615: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 2 (rand_rv32i_program_2): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 645: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 3: rand_rv32i_program_3
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] Program 3 (rand_rv32i_program_3) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000003  golden=0x00000003  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000026  golden=0x00000026  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000063  golden=0x00000063  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000003  golden=0x00000003  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000d  golden=0x0000000d  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 935: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 935: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 3 (rand_rv32i_program_3): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 965: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 4: rand_rv32i_program_4
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] Program 4 (rand_rv32i_program_4) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000007  golden=0x00000007  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000011  golden=0x00000011  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000018  golden=0x00000018  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000018  golden=0x00000018  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000030  golden=0x00000030  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000004  golden=0x00000004  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000a  golden=0x0000000a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000001  golden=0x00000001  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000017  golden=0x00000017  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000018  golden=0x00000018  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 1265: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 1265: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 4 (rand_rv32i_program_4): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 1295: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 5: rand_rv32i_program_5
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] Program 5 (rand_rv32i_program_5) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000003  golden=0x00000003  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000012  golden=0x00000012  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000015  golden=0x00000015  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000015  golden=0x00000015  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000063  golden=0x00000063  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000005  golden=0x00000005  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000f  golden=0x0000000f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000002  golden=0x00000002  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000015  golden=0x00000015  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 1585: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 1585: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 5 (rand_rv32i_program_5): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 1615: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 6: rand_rv32i_program_6
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] Program 6 (rand_rv32i_program_6) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x0000001f  golden=0x0000001f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x0000002f  golden=0x0000002f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x0000002f  golden=0x0000002f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x0000005e  golden=0x0000005e  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000f  golden=0x0000000f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x0000001f  golden=0x0000001f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x0000002f  golden=0x0000002f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 1915: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 1915: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 6 (rand_rv32i_program_6): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 1945: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 7: rand_rv32i_program_7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] Program 7 (rand_rv32i_program_7) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000002  golden=0x00000002  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000004  golden=0x00000004  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x0000000c  golden=0x0000000c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000063  golden=0x00000063  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000007  golden=0x00000007  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x00000002  golden=0x00000002  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 2235: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 2235: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 7 (rand_rv32i_program_7): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 2265: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 8: rand_rv32i_program_8
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] Program 8 (rand_rv32i_program_8) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000005  golden=0x00000005  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x0000000e  golden=0x0000000e  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000026  golden=0x00000026  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000008  golden=0x00000008  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x00000009  golden=0x00000009  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000004  golden=0x00000004  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x0000000f  golden=0x0000000f  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000013  golden=0x00000013  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 2565: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 2565: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 8 (rand_rv32i_program_8): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 2595: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 9: rand_rv32i_program_9
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] Program 9 (rand_rv32i_program_9) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000004  golden=0x00000004  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000014  golden=0x00000014  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000014  golden=0x00000014  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000028  golden=0x00000028  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000063  golden=0x00000063  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x00000009  golden=0x00000009  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x0000000c  golden=0x0000000c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000014  golden=0x00000014  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000014  golden=0x00000014  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 2885: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 2885: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 9 (rand_rv32i_program_9): PASS
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(322) @ 2915: uvm_test_top.env.agent.driver [CPU_DRIVER] Loading program 10: rand_rv32i_program_10
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(482) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(485) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] Program 10 (rand_rv32i_program_10) actual-vs-golden architectural state
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(489) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] PC    actual=0x0000003c  golden=0x0000003c  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(493) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] HALT  actual=1           golden=1           OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(495) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] Register compare: x0-x15
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x00   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x01   actual=0x00000001  golden=0x00000001  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x02   actual=0x00000007  golden=0x00000007  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x03   actual=0x00000008  golden=0x00000008  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x04   actual=0x00000008  golden=0x00000008  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x05   actual=0x00000010  golden=0x00000010  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x06   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x07   actual=0x0000000a  golden=0x0000000a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x08   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x09   actual=0x00000034  golden=0x00000034  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x10   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x11   actual=0x0000002a  golden=0x0000002a  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x12   actual=0x00000006  golden=0x00000006  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x13   actual=0x00000001  golden=0x00000001  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x14   actual=0x00000007  golden=0x00000007  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(499) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] x15   actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(502) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] Data memory compare: word indices 0-7
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[00] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[01] actual=0x00000008  golden=0x00000008  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[02] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[03] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[04] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[05] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[06] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(506) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] mem[07] actual=0x00000000  golden=0x00000000  OK
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(508) @ 3215: uvm_test_top.env.scoreboard [CPU_STATE] ------------------------------------------------------------
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(563) @ 3215: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Program 10 (rand_rv32i_program_10): PASS
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_objection.svh(1271) @ 3345: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# KERNEL: UVM_INFO /home/runner/cpu_pkg.sv(575) @ 3345: uvm_test_top.env.scoreboard [CPU_SCOREBOARD] Scoreboard summary: 10/10 programs matched golden model, mismatches=0
+# KERNEL: UVM_INFO ./uvm-1.2/src/base/uvm_report_server.svh(869) @ 3345: reporter [UVM/REPORT/SERVER] 
+# KERNEL: --- UVM Report Summary ---
+# KERNEL: 
+# KERNEL: ** Report counts by severity
+# KERNEL: UVM_INFO :  334
+# KERNEL: UVM_WARNING :    0
+# KERNEL: UVM_ERROR :    0
+# KERNEL: UVM_FATAL :    0
+# KERNEL: ** Report counts by id
+# KERNEL: [CPU_DRIVER]    10
+# KERNEL: [CPU_SCOREBOARD]    11
+# KERNEL: [CPU_STATE]   310
+# KERNEL: [RNTST]     1
+# KERNEL: [TEST_DONE]     1
+# KERNEL: [UVM/RELNOTES]     1
+# KERNEL: 
+# RUNTIME: Info: RUNTIME_0068 uvm_root.svh (521): $finish called.
+# KERNEL: Time: 3345 ns,  Iteration: 57,  Instance: /tb_top,  Process: @INITIAL#39_1@.
+# KERNEL: stopped at time: 3345 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+# KERNEL: ============================================================
+# KERNEL: RV32I SVA ASSERTION SUMMARY
+# KERNEL: AST_HALT_STICKY        failures = 0
+# KERNEL: AST_PC_FREEZE          failures = 0
+# KERNEL: AST_PC_WORD_ALIGNED    failures = 0
+# KERNEL: AST_REDIRECT_FLUSH     failures = 0
+# KERNEL: AST_LOAD_USE_PC_HOLD   failures = 0
+# KERNEL: AST_LOAD_USE_BUBBLE    failures = 0
+# KERNEL: AST_X0_ZERO            failures = 0
+# KERNEL: TOTAL ASSERTION FAILURES = 0
+# KERNEL: ASSERTION RESULT: PASS
+# KERNEL: RV32I SVA COVER EVENT COUNTS
+# KERNEL: COV_BRANCH_TAKEN      count = 5
+# KERNEL: COV_JUMP_TAKEN        count = 10
+# KERNEL: COV_LOAD_USE_STALL    count = 10
+# KERNEL: COV_HALT_REACHED      count = 90
+# KERNEL: COV_STALL_THEN_BRANCH count = 5
+# KERNEL: ============================================================
+# KERNEL: ============================================================
+# KERNEL: RV32I FUNCTIONAL COVERAGE SUMMARY
+# KERNEL: cg_pipeline_events  = 90.62%
+# KERNEL: cg_rv32i_opcodes    = 87.50%
+# KERNEL: cg_rv32i_instrs     = 90.91%
+# KERNEL: cg_forward_paths    = 75.00%
+# KERNEL: Average shown score = 86.01%
+# KERNEL: Note: the official ACDB report may weight coverage differently.
+# KERNEL: ============================================================
+# ACDB: Covergroup Coverage data has been saved to "fcover.acdb" database.
+# VSIM: Simulation has finished.
+
+===================== MERGED ACDB COVERAGE + ASSERTION REPORT =====================
+# Aldec, Inc. Riviera-PRO version 2025.04.139.9738 built for Linux64 on May 30, 2025.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2025 Aldec, Inc. All rights reserved.
++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++     DESIGN HIERARCHY    ++++++++++
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+CUMULATIVE SUMMARY
+=============================================
+|    Coverage Type    | Weight | Hits/Total |
+=============================================
+| Covergroup Coverage |      1 |    97.656% |
+|---------------------|--------|------------|
+| Types               |        |      3 / 4 |
+=============================================
+CUMULATIVE INSTANCE-BASED COVERAGE: 97.656%
+COVERED INSTANCES: 0 / 1
+FILES: 1
+
+
+INSTANCE - /tb_top/dut/u_cov : work.cpu_pipeline_cov
+
+
+    SUMMARY
+    =============================================
+    |    Coverage Type    | Weight | Hits/Total |
+    =============================================
+    | Covergroup Coverage |      1 |    97.656% |
+    |---------------------|--------|------------|
+    | Types               |        |      3 / 4 |
+    =============================================
+    WEIGHTED AVERAGE LOCAL: 97.656%
+
+
+    COVERGROUP COVERAGE
+    ===============================================================================
+    |                Covergroup                 |   Hits   |  Goal /  |  Status   |
+    |                                           |          | At Least |           |
+    ===============================================================================
+    | TYPE /tb_top/dut/u_cov/cg_pipeline_events |  90.625% | 100.000% | Uncovered |
+    ===============================================================================
+    | INSTANCE <UNNAMED1>                       |  90.625% | 100.000% | Uncovered |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_stall           | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin stall                                 |       11 |        1 | Covered   |
+    | bin no_stall                              |      322 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_branch          | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin taken                                 |        6 |        1 | Covered   |
+    | bin not_taken                             |      327 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_jump            | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin jump                                  |       11 |        1 | Covered   |
+    | bin no_jump                               |      322 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_forward         | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin forwarded                             |       44 |        1 | Covered   |
+    | bin no_forward                            |      289 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_halt            | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin halted                                |      108 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | CROSS <UNNAMED1>::cx_branch_fwd           |  75.000% | 100.000% | Uncovered |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin <taken,no_forward>                    |        6 |        1 | Covered   |
+    | bin <not_taken,forwarded>                 |       44 |        1 | Covered   |
+    | bin <not_taken,no_forward>                |      283 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | CROSS <UNNAMED1>::cx_jump_fwd             |  75.000% | 100.000% | Uncovered |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin <jump,no_forward>                     |       11 |        1 | Covered   |
+    | bin <no_jump,forwarded>                   |       44 |        1 | Covered   |
+    | bin <no_jump,no_forward>                  |      278 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | CROSS <UNNAMED1>::cx_stall_fwd            |  75.000% | 100.000% | Uncovered |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin <stall,no_forward>                    |       11 |        1 | Covered   |
+    | bin <no_stall,forwarded>                  |       44 |        1 | Covered   |
+    | bin <no_stall,no_forward>                 |      278 |        1 | Covered   |
+    ===============================================================================
+    | TYPE /tb_top/dut/u_cov/cg_rv32i_opcodes   | 100.000% | 100.000% | Covered   |
+    ===============================================================================
+    | INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_opcode          | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin op_rtype                              |       52 |        1 | Covered   |
+    | bin op_imm                                |       50 |        1 | Covered   |
+    | bin op_load                               |       11 |        1 | Covered   |
+    | bin op_store                              |       11 |        1 | Covered   |
+    | bin op_branch                             |       11 |        1 | Covered   |
+    | bin op_lui                                |        1 |        1 | Covered   |
+    | bin op_jal                                |       11 |        1 | Covered   |
+    | bin op_system                             |      119 |        1 | Covered   |
+    | default bin other                         |       67 |    -     | Occurred  |
+    ===============================================================================
+    | TYPE /tb_top/dut/u_cov/cg_rv32i_instrs    | 100.000% | 100.000% | Covered   |
+    ===============================================================================
+    | INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_instr_kind      | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin add                                   |       22 |        1 | Covered   |
+    | bin sub                                   |       10 |        1 | Covered   |
+    | bin and_i                                 |       10 |        1 | Covered   |
+    | bin or_i                                  |       10 |        1 | Covered   |
+    | bin addi                                  |       50 |        1 | Covered   |
+    | bin lw                                    |       11 |        1 | Covered   |
+    | bin sw                                    |       11 |        1 | Covered   |
+    | bin beq                                   |       11 |        1 | Covered   |
+    | bin lui                                   |        1 |        1 | Covered   |
+    | bin jal                                   |       11 |        1 | Covered   |
+    | bin ecall                                 |      119 |        1 | Covered   |
+    ===============================================================================
+    | TYPE /tb_top/dut/u_cov/cg_forward_paths   | 100.000% | 100.000% | Covered   |
+    ===============================================================================
+    | INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_ex_mem_rs1      | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin active                                |       22 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_ex_mem_rs2      | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin active                                |        1 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_mem_wb_rs1      | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin active                                |       21 |        1 | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | COVERPOINT <UNNAMED1>::cp_mem_wb_rs2      | 100.000% | 100.000% | Covered   |
+    |-------------------------------------------|----------|----------|-----------|
+    | bin active                                |       11 |        1 | Covered   |
+    ===============================================================================
+
+
++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++       COVERGROUPS       ++++++++++
++++++++++++++++++++++++++++++++++++++++++++++
+
+
+CUMULATIVE SUMMARY
+=============================================
+|    Coverage Type    | Weight | Hits/Total |
+=============================================
+| Covergroup Coverage |      1 |    97.656% |
+|---------------------|--------|------------|
+| Types               |        |      3 / 4 |
+=============================================
+
+
+COVERGROUP COVERAGE
+===============================================================================
+|                Covergroup                 |   Hits   |  Goal /  |  Status   |
+|                                           |          | At Least |           |
+===============================================================================
+| TYPE /tb_top/dut/u_cov/cg_pipeline_events |  90.625% | 100.000% | Uncovered |
+===============================================================================
+| INSTANCE <UNNAMED1>                       |  90.625% | 100.000% | Uncovered |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_stall           | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin stall                                 |       11 |        1 | Covered   |
+| bin no_stall                              |      322 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_branch          | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin taken                                 |        6 |        1 | Covered   |
+| bin not_taken                             |      327 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_jump            | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin jump                                  |       11 |        1 | Covered   |
+| bin no_jump                               |      322 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_forward         | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin forwarded                             |       44 |        1 | Covered   |
+| bin no_forward                            |      289 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_halt            | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin halted                                |      108 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| CROSS <UNNAMED1>::cx_branch_fwd           |  75.000% | 100.000% | Uncovered |
+|-------------------------------------------|----------|----------|-----------|
+| bin <taken,no_forward>                    |        6 |        1 | Covered   |
+| bin <not_taken,forwarded>                 |       44 |        1 | Covered   |
+| bin <not_taken,no_forward>                |      283 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| CROSS <UNNAMED1>::cx_jump_fwd             |  75.000% | 100.000% | Uncovered |
+|-------------------------------------------|----------|----------|-----------|
+| bin <jump,no_forward>                     |       11 |        1 | Covered   |
+| bin <no_jump,forwarded>                   |       44 |        1 | Covered   |
+| bin <no_jump,no_forward>                  |      278 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| CROSS <UNNAMED1>::cx_stall_fwd            |  75.000% | 100.000% | Uncovered |
+|-------------------------------------------|----------|----------|-----------|
+| bin <stall,no_forward>                    |       11 |        1 | Covered   |
+| bin <no_stall,forwarded>                  |       44 |        1 | Covered   |
+| bin <no_stall,no_forward>                 |      278 |        1 | Covered   |
+===============================================================================
+| TYPE /tb_top/dut/u_cov/cg_rv32i_opcodes   | 100.000% | 100.000% | Covered   |
+===============================================================================
+| INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_opcode          | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin op_rtype                              |       52 |        1 | Covered   |
+| bin op_imm                                |       50 |        1 | Covered   |
+| bin op_load                               |       11 |        1 | Covered   |
+| bin op_store                              |       11 |        1 | Covered   |
+| bin op_branch                             |       11 |        1 | Covered   |
+| bin op_lui                                |        1 |        1 | Covered   |
+| bin op_jal                                |       11 |        1 | Covered   |
+| bin op_system                             |      119 |        1 | Covered   |
+| default bin other                         |       67 |    -     | Occurred  |
+===============================================================================
+| TYPE /tb_top/dut/u_cov/cg_rv32i_instrs    | 100.000% | 100.000% | Covered   |
+===============================================================================
+| INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_instr_kind      | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin add                                   |       22 |        1 | Covered   |
+| bin sub                                   |       10 |        1 | Covered   |
+| bin and_i                                 |       10 |        1 | Covered   |
+| bin or_i                                  |       10 |        1 | Covered   |
+| bin addi                                  |       50 |        1 | Covered   |
+| bin lw                                    |       11 |        1 | Covered   |
+| bin sw                                    |       11 |        1 | Covered   |
+| bin beq                                   |       11 |        1 | Covered   |
+| bin lui                                   |        1 |        1 | Covered   |
+| bin jal                                   |       11 |        1 | Covered   |
+| bin ecall                                 |      119 |        1 | Covered   |
+===============================================================================
+| TYPE /tb_top/dut/u_cov/cg_forward_paths   | 100.000% | 100.000% | Covered   |
+===============================================================================
+| INSTANCE <UNNAMED1>                       | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_ex_mem_rs1      | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin active                                |       22 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_ex_mem_rs2      | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin active                                |        1 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_mem_wb_rs1      | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin active                                |       21 |        1 | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| COVERPOINT <UNNAMED1>::cp_mem_wb_rs2      | 100.000% | 100.000% | Covered   |
+|-------------------------------------------|----------|----------|-----------|
+| bin active                                |       11 |        1 | Covered   |
+===============================================================================
+
+
+Done
