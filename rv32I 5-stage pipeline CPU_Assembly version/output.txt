@@ -1,0 +1,127 @@
+[2026-07-13 23:23:37 UTC] chmod +x run.bash; sed -i -e 's/\r//g' run.bash; ./run.bash  
+Assembled hazard_test.S -> hazard_test.hex (19 instructions)
+===================== ASSEMBLY MACHINE CODE =====================
+     1	00500093
+     2	00308113
+     3	40110633
+     4	001176b3
+     5	00116733
+     6	001101b3
+     7	00002203
+     8	003202b3
+     9	00502223
+    10	00108663
+    11	00900313
+    12	00800313
+    13	00700393
+    14	12345437
+    15	008004ef
+    16	06f00513
+    17	02a00593
+    18	06300013
+    19	00000073
+VSIMSA: Configuration file changed: `/home/runner/library.cfg'
+ALIB: Library "work" attached.
+work = ./work/work.lib
+MESSAGE "Unit top modules: tb_top."
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time: 0[s]."
+done
+
+===================== RUNNING PLAIN SV ASSEMBLY TEST =====================
+# Aldec, Inc. Riviera-PRO version 2025.04.139.9738 built for Linux64 on May 30, 2025.
+# HDL, SystemC, and Assertions simulator, debugger, and design environment.
+# (c) 1999-2025 Aldec, Inc. All rights reserved.
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library '/usr/share/Riviera-PRO/bin/libsystf.so'
+# ELAB2: Create instances ...
+# KERNEL: Info: Loading library:  libgolden
+# KERNEL: Time resolution set to 1ns.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... done : 0.0 [s]
+# SLP: Generation phase ...
+# SLP: Generation phase ... done : 0.1 [s]
+# SLP: Finished : 0.2 [s]
+# SLP: 0 primitives and 43 (100.00%) other processes in SLP
+# SLP: 27 (16.27%) signals in SLP and 139 (83.73%) interface signals
+# ELAB2: Elaboration final pass complete - time: 0.3 [s].
+# KERNEL: SLP loading done - time: 0.0 [s].
+# KERNEL: Warning: You are using the Riviera-PRO EDU Edition. The performance of simulation is reduced.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: SLP simulation initialization done - time: 0.0 [s].
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 4631 kB (elbread=427 elab2=4195 kernel=8 sdf=0)
+# KERNEL: ASDB file was created in location /home/runner/dataset.asdb
+# KERNEL: ============================================================
+# KERNEL: Running assembly-backed RV32I directed test
+# KERNEL: Program: hazard_test.S -> hazard_test.hex
+# KERNEL: ============================================================
+# KERNEL: DUT reached ECALL/HALT at cycle 23, PC=0x00000048
+# KERNEL: 
+# KERNEL: ================ ARCHITECTURAL COMPARISON ================
+# KERNEL:   PASS x0 = 0x00000000
+# KERNEL:   PASS x1 = 0x00000005
+# KERNEL:   PASS x2 = 0x00000008
+# KERNEL:   PASS x3 = 0x0000000d
+# KERNEL:   PASS x4 = 0x00000064
+# KERNEL:   PASS x5 = 0x00000071
+# KERNEL:   PASS x6 = 0x00000000
+# KERNEL:   PASS x7 = 0x00000007
+# KERNEL:   PASS x8 = 0x12345000
+# KERNEL:   PASS x9 = 0x0000003c
+# KERNEL:   PASS x10 = 0x00000000
+# KERNEL:   PASS x11 = 0x0000002a
+# KERNEL:   PASS x12 = 0x00000003
+# KERNEL:   PASS x13 = 0x00000000
+# KERNEL:   PASS x14 = 0x0000000d
+# KERNEL:   PASS x15 = 0x00000000
+# KERNEL:   PASS x16 = 0x00000000
+# KERNEL:   PASS x17 = 0x00000000
+# KERNEL:   PASS x18 = 0x00000000
+# KERNEL:   PASS x19 = 0x00000000
+# KERNEL:   PASS x20 = 0x00000000
+# KERNEL:   PASS x21 = 0x00000000
+# KERNEL:   PASS x22 = 0x00000000
+# KERNEL:   PASS x23 = 0x00000000
+# KERNEL:   PASS x24 = 0x00000000
+# KERNEL:   PASS x25 = 0x00000000
+# KERNEL:   PASS x26 = 0x00000000
+# KERNEL:   PASS x27 = 0x00000000
+# KERNEL:   PASS x28 = 0x00000000
+# KERNEL:   PASS x29 = 0x00000000
+# KERNEL:   PASS x30 = 0x00000000
+# KERNEL:   PASS x31 = 0x00000000
+# KERNEL:   PASS all 256 data-memory words match the golden model
+# KERNEL:   PASS PC = 0x00000048
+# KERNEL:   PASS halt = 1
+# KERNEL: 
+# KERNEL: ================ HAZARD/EVENT OBSERVATION =================
+# KERNEL:   PASS load-use stall           observed 1 time(s)
+# KERNEL:   PASS taken BEQ redirect       observed 1 time(s)
+# KERNEL:   PASS JAL redirect             observed 1 time(s)
+# KERNEL:   PASS EX/MEM forwarding        observed 3 time(s)
+# KERNEL:   PASS MEM/WB forwarding        observed 3 time(s)
+# KERNEL:   PASS BEQ flush: x6 remained zero
+# KERNEL:   PASS JAL flush: x10 remained zero
+# KERNEL:   PASS x0 hardwiring: x0 remained zero
+# KERNEL: 
+# KERNEL: ================ MANUAL INSTRUCTION COVERAGE ==============
+# KERNEL: Implemented instructions observed = 10/10
+# KERNEL:   PASS all 10 implemented RV32I instructions were observed
+# KERNEL: 
+# KERNEL: ============================================================
+# KERNEL: FINAL RESULT: 44 checks passed, 0 checks failed
+# KERNEL: TEST PASS: assembly program, hazards, and golden comparison passed
+# KERNEL: ============================================================
+# RUNTIME: Info: RUNTIME_0068 testbench.sv (460): $finish called.
+# KERNEL: Time: 305 ns,  Iteration: 1,  Instance: /tb_top,  Process: @INITIAL#run_test@.
+# KERNEL: stopped at time: 305 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.
+# VSIM: Simulation has finished.
+Done
