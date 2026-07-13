@@ -1,21 +1,26 @@
-# RV32I-Pipelined-CPU-Verification
+# RV32I Pipelined CPU Verification
+
 ## Overview
 
-This project implements a complete UVM-based functional verification environment for a custom RV32I-subset 5-stage pipelined CPU written in SystemVerilog.
+This project verifies a custom **32-bit, five-stage RV32I-subset pipelined CPU** using two complementary verification implementations:
 
-The CPU implements a genuine RISC-V RV32I instruction subset with:
+1. **UVM verification flow** — constrained-random and directed stimulus, SVA, covergroups, RAL backdoor access, and a DPI-C golden model.
+2. **Assembly-driven verification flow** — a directed `.S` program, a Python RV32I-subset assembler, a plain SystemVerilog self-checking testbench, and the same DPI-C golden model.
 
-- 32-bit datapath, 32 architectural registers (x0 hardwired to zero)
-- Byte-addressed PC incrementing by 4 per instruction
-- Five instruction formats: R, I, S, B, U, J
-- ECALL instruction mapped as simulation halt
+Both implementations verify architectural correctness and pipeline behavior, but they serve different purposes. The UVM environment provides reuse, regression, functional coverage, and assertion-based checking. The assembly flow provides software-visible control over exact instruction dependencies and demonstrates that a real assembly program can be assembled, loaded into instruction memory, executed by the CPU, and checked against an independent reference model.
 
-The verification environment ensures:
+> **Instruction-count convention:** the DUT implements 10 functional RV32I instructions—ADD, SUB, AND, OR, ADDI, LW, SW, BEQ, LUI, and JAL—plus ECALL, which is used as the simulation halt instruction. Therefore, coverage reports may show 11 instruction kinds when ECALL is included.
 
-- ISA-level functional correctness via DPI-C C golden model (ISS)
-- Pipeline hazard correctness (forwarding, stalling, flushing)
-- Protocol compliance via SVA property checkers bound to the DUT
-- Functional coverage closure across opcodes, forwarding paths and pipeline events
+---
+
+## Verification Implementations
+
+| Implementation | Stimulus | Checking | Coverage | Primary purpose |
+|---|---|---|---|---|
+| UVM/SVA/Coverage | Directed and constrained-random encoded instructions | UVM scoreboard + DPI-C ISS + SVA | Native covergroups and ACDB | Reusable verification environment and regression testing |
+| Assembly/Plain SV | Directed `hazard_test.S` program assembled by Python | Plain SV self-checking TB + DPI-C ISS + procedural checks | Manual instruction/event counters | Software-level processor validation and exact hazard sequencing |
+
+The implementations are kept separate because the shared Riviera-PRO EDU license used by EDA Playground may not always make UVM, concurrent SVA, and covergroup features available. The plain SystemVerilog assembly version avoids those licensed features while preserving architectural and pipeline checks.
 
 ---
 
@@ -23,357 +28,499 @@ The verification environment ensures:
 
 **File:** `design.sv`
 
-The DUT is a cycle-accurate RV32I-subset 5-stage pipelined processor:
+The DUT is a cycle-accurate RV32I-subset processor with the following pipeline:
 
-```
-IF  →  ID  →  EX  →  MEM  →  WB
+```text
+IF -> ID -> EX -> MEM -> WB
 ```
 
-### Supported Instruction Set
+### Supported Instructions
 
 | Format | Instructions |
-|--------|-------------|
+|---|---|
 | R-type | ADD, SUB, AND, OR |
 | I-type | ADDI, LW |
 | S-type | SW |
 | B-type | BEQ |
 | U-type | LUI |
 | J-type | JAL |
-| SYSTEM | ECALL (halt) |
+| SYSTEM | ECALL, used as simulation halt |
 
-### Pipeline Correctness Features
+### Architectural Features
 
-**EX/MEM and MEM/WB Forwarding**
-- Four forwarding paths: EX/MEM→rs1, EX/MEM→rs2, MEM/WB→rs1, MEM/WB→rs2
-- EX/MEM load values are explicitly excluded from forwarding (`!ex_mem_mem_to_reg` guard) — prevents forwarding a load *address* as *data*, a subtle correctness requirement
-- x0 writes are suppressed at all forwarding mux inputs
+- 32-bit datapath and byte-addressed program counter.
+- 32 architectural registers, with `x0` hardwired to zero.
+- 256-word instruction memory and 256-word data memory.
+- R, I, S, B, U, and J immediate decoding.
+- ECALL detection and sticky halt behavior.
 
-**Load-Use Hazard Stalling**
-- 1-cycle bubble inserted when a LW result is consumed by the immediately following instruction on either rs1 or rs2
-- PC and IF/ID registers held; ID/EX flushed to bubble
+### Pipeline-Hazard Handling
 
-**Control Hazard Flushing**
-- BEQ and JAL resolved in the EX stage
-- Both instructions already in IF/ID and ID/EX are squashed on redirect
-- Single `redirect_taken` signal covers both branch and jump cases
+#### EX/MEM and MEM/WB forwarding
 
-**x0 Hardwired to Zero**
-- Enforced at register file write (WB stage suppresses writes to x0)
-- Enforced at forwarding mux (x0 source always returns 0)
-- Verified by SVA property `AST_X0_ZERO`
+The CPU supports four forwarding paths:
 
-### Design Parameters
+- EX/MEM to `rs1`
+- EX/MEM to `rs2`
+- MEM/WB to `rs1`
+- MEM/WB to `rs2`
 
-| Parameter | Value | Description |
-|-----------|-------|-------------|
-| DATA_W | 32 | Data and register width |
-| IMEM_DEPTH | 256 | Instruction memory depth (words) |
-| DMEM_DEPTH | 256 | Data memory depth (words) |
+EX/MEM load results are excluded from direct forwarding through the `!ex_mem_mem_to_reg` condition, preventing a load address from being incorrectly forwarded as loaded data.
+
+#### Load-use stall
+
+When an instruction immediately consumes the destination of a preceding LW:
+
+- The PC is held.
+- IF/ID is held.
+- ID/EX is cleared to insert a one-cycle bubble.
+
+#### BEQ and JAL flushing
+
+BEQ and JAL are resolved in the EX stage. On a redirect, the younger instructions in IF/ID and ID/EX are flushed.
+
+#### x0 protection
+
+Writes to `x0` are suppressed in the register-file writeback path and ignored by forwarding logic.
 
 ---
+
+## Repository Structure
+
+```text
+RV32I-Pipelined-CPU-Verification-main/
+├── design.sv
+├── cpu_if.sv
+├── cpu_pkg.sv
+├── cpu_sva.sv
+├── cpu_coverage.sv
+├── testbench.sv
+├── golden_model.c
+├── run.bash
+├── coverage_final.txt
+├── output.txt
+└── rv32I 5-stage pipeline CPU_Assembly version/
+    ├── design.sv
+    ├── testbench.sv
+    ├── golden_model.c
+    ├── hazard_test.S
+    ├── rv32i_subset_asm.py
+    ├── hazard_test.hex
+    ├── run.bash
+    └── output.txt
+```
+
+The copies of `cpu_if.sv`, `cpu_pkg.sv`, and `cpu_observer.sv` inside the assembly directory are not compiled by the restricted-license plain-SV run. The active assembly flow compiles only `design.sv` and `testbench.sv`, along with the DPI-C shared library.
+
+---
+
+# Implementation 1: UVM, SVA, Functional Coverage, and DPI-C
 
 ## UVM Testbench Architecture
 
-```
+```text
 Test
- └── Env
+ └── Environment
       ├── Agent
-      │    ├── Driver        — backdoor-loads programs, drives reset, waits for halt
-      │    ├── Monitor       — RAL backdoor-reads 32 registers + memory after halt
-      │    └── Sequencer
-      ├── Scoreboard         — DPI-C ISS replay + register/memory state comparison
-      ├── RAL (cpu_reg_block) — typed backdoor access to regfile[0:31] and data_mem
-      └── cpu_instr_cov      — UVM subscriber sampling per-instruction opcode/rd coverage
+      │    ├── Sequencer
+      │    ├── Driver
+      │    └── Monitor
+      ├── Scoreboard
+      └── RAL backdoor model
+
+cpu_sva.sv      --bind--> DUT internal pipeline signals
+cpu_coverage.sv --bind--> DUT internal pipeline signals
+golden_model.c  <--DPI-C--> UVM driver and scoreboard
 ```
 
-SVA and functional coverage modules are bound to the DUT separately via `bind`:
+### Main Files
 
-```
-cpu_sva.sv      ──bind──► simple_cpu_pipelined  (taps internal pipeline signals)
-cpu_coverage.sv ──bind──► simple_cpu_pipelined  (taps forwarding mux conditions)
-cpu_instr_cov   ◄── program_ap ── cpu_driver    (UVM TLM analysis port)
-```
+| File | Role |
+|---|---|
+| `cpu_if.sv` | External CPU interface containing clock, reset, halt, and PC |
+| `cpu_pkg.sv` | UVM transactions, sequences, driver, monitor, scoreboard, RAL, and tests |
+| `cpu_sva.sv` | Bound concurrent assertions and cover properties |
+| `cpu_coverage.sv` | Bound functional covergroups |
+| `golden_model.c` | Non-pipelined architectural reference model |
+| `testbench.sv` | UVM top-level and DUT instantiation |
+| `run.bash` | DPI build, compilation, test execution, and ACDB merge |
 
-### Interface
+## UVM Stimulus
 
-**File:** `cpu_if.sv`
+### Directed hazard sequence
 
-Wraps the DUT's external ports (`clk`, `rst_n`, `halt`, `pc_out`). Register file, data memory and instruction memory are accessed by the UVM environment via backdoor HDL paths (`uvm_hdl_deposit` / `uvm_hdl_read`), since the CPU has no external bus interface.
+`cpu_hazard_seq` creates a 16-word directed program that targets:
 
-### Transaction
+- EX/MEM forwarding
+- MEM/WB forwarding
+- Load-use stalling
+- Store-data forwarding
+- Taken BEQ flushing
+- JAL flushing and link-register writeback
+- LUI behavior
+- Attempted write to `x0`
+- ECALL halt
 
-**File:** `cpu_pkg.sv` — `cpu_instr_item`
+### Constrained-random sequence
 
-Encodes all six RV32I instruction formats:
+`cpu_rand_seq` generates 10 programs with randomized register selections, immediate values, arithmetic operations, loads, stores, and branch behavior. Each generated program is loaded into both the DUT and the golden model.
 
-| Format | Encoding function | Fields |
-|--------|------------------|--------|
-| R-type | `enc_r()` | opcode, rd, funct3, rs1, rs2, funct7 |
-| I-type | `enc_i()` | opcode, rd, funct3, rs1, imm[11:0] |
-| S-type | `enc_s()` | opcode, rs1, rs2, funct3, imm[11:0] |
-| B-type | `enc_b()` | opcode, rs1, rs2, funct3, imm[12:1] |
-| U-type | `enc_u()` | opcode, rd, imm[31:12] |
-| J-type | `enc_j()` | opcode, rd, imm[20:1] |
-
-### Sequences
-
-**File:** `cpu_pkg.sv`
-
-| Sequence | Type | Purpose |
-|----------|------|---------|
-| `cpu_rand_seq` | Constrained-random | 10–20 instructions per program; no BEQ/JAL (uncontrolled branches excluded from random) |
-| `cpu_hazard_seq` | Directed | 11-instruction hazard-stress program: EX/EX forward, MEM/WB forward, load-use stall, store-data forward, BEQ taken flush, JAL taken flush, LUI |
-
-### DPI-C Golden Model
+## DPI-C Golden Model
 
 **File:** `golden_model.c`
 
-A non-pipelined C implementation of the full RV32I-subset ISA used as an independent oracle. The scoreboard replays each program through the golden model after the DUT runs to completion and compares final architectural state register-by-register and word-by-word.
+The reference model is intentionally non-pipelined. It fetches and executes one architectural instruction at a time and therefore acts as an implementation-independent oracle for the pipelined RTL.
 
-Key implementation details:
-- Correct immediate decoders for all five immediate formats (I, S, B, U, J)
-- `imm_b()` and `imm_j()` produce byte-addressed offsets matching the RTL
-- x0 is zeroed after every step
-- `gm_reset()` clears all 256 data memory words — matches the UVM driver's full data memory clear before each program
+It supports:
 
-DPI boundary: `int` (32-bit) on both sides, matching SystemVerilog `int` imports.
+- ADD, SUB, AND, OR
+- ADDI, LW, SW
+- BEQ, LUI, JAL
+- ECALL halt
+- Correct I, S, B, U, and J immediate reconstruction
+- Byte-addressed PC behavior
+- Word-indexed instruction and data memories
+- `x0` enforcement after every instruction
 
-### Driver
+For every UVM program, all 32 registers, all 256 data-memory words, final PC, and halt state are compared against the golden model.
 
-**File:** `cpu_pkg.sv` — `cpu_driver`
-
-For each program:
-1. Asserts reset
-2. Backdoor-deposits all 256 data memory words to zero (matching `gm_reset()`)
-3. Backdoor-deposits instruction words
-4. Backdoor-deposits 8 fixed preload data words (word[0]=100, words[1-7]=0)
-5. De-asserts reset, waits for `halt`
-6. Waits 5 drain cycles before signalling monitor
-7. Waits 15 inter-program gap cycles before next reset
-
-### Monitor
-
-**File:** `cpu_pkg.sv` — `cpu_monitor`
-
-Triggers on `posedge halt`, waits 5 drain cycles, then reads final architectural state via UVM RAL backdoor peek calls:
-- 32 register file entries (`regfile[0:31]`) — 32-bit each
-- 8 data memory words (`data_mem[0:7]`) — matching preload addresses
-
-### RAL
-
-**File:** `cpu_pkg.sv` — `cpu_reg_block`
-
-| RAL Model | HDL Path | Width | Depth |
-|-----------|----------|-------|-------|
-| `r[0:31]` | `tb_top.dut.regfile[N]` | 32-bit | 32 registers |
-| `dmem` | `tb_top.dut.data_mem` | 32-bit | 256 words |
-
-### Scoreboard
-
-**File:** `cpu_pkg.sv` — `cpu_scoreboard`
-
-Per-program comparison flow:
-1. Receive program encoding from driver analysis port
-2. Receive final DUT state from monitor analysis port
-3. Call `gm_reset()`, load program into ISS, call `gm_run(1000)`
-4. Compare all 32 registers and 8 memory words
-5. Print full register/memory dump with `actual=` vs `golden=` and `OK`/`MISMATCH` per entry
-
-### SVA Checker
+## SVA Checks
 
 **File:** `cpu_sva.sv`
 
-Seven assertions bound directly to DUT internal signals via `bind`:
+| Assertion | Requirement |
+|---|---|
+| `AST_HALT_STICKY` | Halt remains asserted until reset |
+| `AST_PC_FREEZE` | PC remains stable after halt |
+| `AST_PC_WORD_ALIGNED` | PC is always word aligned |
+| `AST_REDIRECT_FLUSH` | BEQ/JAL redirect clears ID/EX |
+| `AST_LOAD_USE_PC_HOLD` | Load-use stall holds the PC |
+| `AST_LOAD_USE_BUBBLE` | Load-use stall inserts an ID/EX bubble |
+| `AST_X0_ZERO` | `x0` always remains zero |
 
-| Assertion | Property |
-|-----------|---------|
-| `AST_HALT_STICKY` | `halt` stays asserted until reset |
-| `AST_PC_FREEZE` | PC does not change after `halt` |
-| `AST_PC_WORD_ALIGNED` | PC[1:0] == 2'b00 at all times |
-| `AST_REDIRECT_FLUSH` | ID/EX is a bubble the cycle after BEQ or JAL redirect |
-| `AST_LOAD_USE_PC_HOLD` | PC is held during load-use stall |
-| `AST_LOAD_USE_BUBBLE` | ID/EX becomes a bubble during load-use stall |
-| `AST_X0_ZERO` | regfile[0] is never non-zero |
+Cover properties confirm that branch redirects, jump redirects, load-use stalls, halt, and stall-followed-by-branch scenarios are exercised.
 
-Five cover properties verify that all pipeline events are actually exercised:
-`COV_BRANCH_TAKEN`, `COV_JUMP_TAKEN`, `COV_LOAD_USE_STALL`, `COV_HALT_REACHED`, `COV_STALL_THEN_BRANCH`
-
-### Functional Coverage
+## Functional Coverage
 
 **File:** `cpu_coverage.sv`
 
-Four covergroups bound to the DUT via `bind`:
+| Covergroup | Coverage target |
+|---|---|
+| `cg_pipeline_events` | Stall, branch, jump, forwarding, halt, and event crosses |
+| `cg_rv32i_opcodes` | All implemented RV32I opcodes |
+| `cg_rv32i_instrs` | ADD, SUB, AND, OR, ADDI, LW, SW, BEQ, LUI, JAL, and ECALL |
+| `cg_forward_paths` | All four individual forwarding paths |
 
-| Covergroup | What it measures |
-|------------|-----------------|
-| `cg_pipeline_events` | stall, branch-taken, jump-taken, forwarding, halt; cross: branch×fwd, jump×fwd, stall×fwd |
-| `cg_rv32i_opcodes` | All 8 RV32I opcodes exercised through EX stage |
-| `cg_rv32i_instrs` | All 11 instruction kinds (ADD/SUB/AND/OR/ADDI/LW/SW/BEQ/LUI/JAL/ECALL) |
-| `cg_forward_paths` | All 4 forwarding paths individually (EX/MEM→rs1, EX/MEM→rs2, MEM/WB→rs1, MEM/WB→rs2) |
+### UVM Regression Results
 
-Forwarding detection in the coverage module mirrors the RTL's forwarding mux conditions exactly, including the `!ex_mem_mem_to_reg` guard that prevents load address forwarding.
+| Result | Value |
+|---|---:|
+| Programs compared | 11/11 |
+| Register/memory mismatches | 0 |
+| SVA failures | 0 |
+| RV32I opcode coverage | 100% |
+| RV32I instruction-kind coverage | 100% |
+| Forwarding-path coverage | 100% |
+| Pipeline-event coverage | 90.625% |
+| Overall merged ACDB coverage | **97.656%** |
 
-### Tests
+All four forwarding paths were observed:
 
-| Test | Programs | Focus |
-|------|----------|-------|
-| `cpu_hazard_test` | 1 directed | All pipeline hazard types in one 11-instruction sequence |
-| `cpu_rand_test` | 10 random | Datapath coverage: ADD/SUB/AND/OR/ADDI/LW/SW/LUI with constrained-random register and immediate values |
+| Forwarding path | Hits |
+|---|---:|
+| EX/MEM to `rs1` | 22 |
+| EX/MEM to `rs2` | 1 |
+| MEM/WB to `rs1` | 21 |
+| MEM/WB to `rs2` | 11 |
 
----
+### Remaining UVM Coverage Gaps
 
-## Simulation Results
+The remaining uncovered bins are event crosses requiring simultaneous conditions:
 
-### Scoreboard
+- Taken BEQ with forwarding active
+- JAL with forwarding active
+- Load-use stall with an independent forwarding path active
 
-| Test | Programs checked | Mismatches |
-|------|-----------------|------------|
-| `cpu_hazard_test` | 1 / 1 | 0 |
-| `cpu_rand_test` | 10 / 10 | 0 |
-| **Total** | **11 / 11** | **0** |
-
-### Hazard Test — Architectural State Verification
-
-The directed hazard sequence exercises five distinct hazard scenarios in 11 instructions:
-
-| Step | Instruction | Hazard type | Expected result |
-|------|-------------|-------------|----------------|
-| 1 | `ADDI x1, x0, 5` | — | x1=5 |
-| 2 | `ADDI x2, x1, 3` | EX/EX forward on x1 | x2=8 |
-| 3 | `ADD x3, x2, x1` | EX/EX + MEM/WB forward | x3=13 |
-| 4 | `LW x4, 0(x0)` | — | x4=100 (from preload) |
-| 5 | `ADD x5, x4, x3` | Load-use stall on x4 | x5=113 |
-| 6 | `SW x5, 4(x0)` | Store-data forward on x5 | mem[1]=113 |
-| 7 | `BEQ x1, x1, +12` | Always taken → flush next 2 | redirect to step 10 |
-| 8 | `ADDI x6, x0, 9` | Must be flushed | x6 stays 0 |
-| 9 | `ADDI x6, x0, 8` | Must be flushed | x6 stays 0 |
-| 10 | `ADDI x7, x0, 7` | Landing point | x7=7 |
-| 11 | `LUI x8, 0x12345` | Upper immediate | x8=0x12345000 |
-
-All register values and memory words matched the DPI-C golden model exactly.
-
-### SVA Assertions
-
-All assertions passed with zero failures across both tests:
-
-```
-AST_HALT_STICKY        failures = 0
-AST_PC_FREEZE          failures = 0
-AST_PC_WORD_ALIGNED    failures = 0
-AST_REDIRECT_FLUSH     failures = 0
-AST_LOAD_USE_PC_HOLD   failures = 0
-AST_LOAD_USE_BUBBLE    failures = 0
-AST_X0_ZERO            failures = 0
-TOTAL ASSERTION FAILURES = 0
-ASSERTION RESULT: PASS
-```
-
-Cover event counts (merged across both tests):
-
-```
-COV_BRANCH_TAKEN      count = 6
-COV_JUMP_TAKEN        count = 11
-COV_LOAD_USE_STALL    count = 11
-COV_HALT_REACHED      count = 108
-COV_STALL_THEN_BRANCH count = 5
-```
-
-### Coverage Results (Merged ACDB)
-
-| Covergroup | Coverage | Status |
-|------------|----------|--------|
-| `cg_rv32i_opcodes` | **100%** | Covered |
-| `cg_rv32i_instrs` | **100%** | Covered |
-| `cg_forward_paths` | **100%** | Covered |
-| `cg_pipeline_events` | 90.6% | Uncovered |
-| **Total ACDB** | **97.656%** | — |
-
-**All 4 forwarding paths individually confirmed:**
-
-| Path | Hit count |
-|------|-----------|
-| EX/MEM → rs1 | 22 |
-| EX/MEM → rs2 | 1 |
-| MEM/WB → rs1 | 21 |
-| MEM/WB → rs2 | 11 |
-
-**All 11 instruction kinds confirmed hit:**
-ADD (22), SUB (10), AND (10), OR (10), ADDI (50), LW (11), SW (11), BEQ (11), LUI (1), JAL (11), ECALL (119)
-
-### Remaining Coverage Gaps
-
-Three cross bins in `cg_pipeline_events` are not yet hit:
-
-| Missing bin | Description | Root cause |
-|-------------|-------------|------------|
-| `<taken, forwarded>` | BEQ taken while a forwarded value was also active | BEQ in hazard test uses register-file values, not forwarded values |
-| `<jump, forwarded>` | JAL taken while forwarding was active | JAL writes link to rd, not a data forward scenario |
-| `<stall, forwarded>` | Load-use stall cycle coincides with a forwarding path to a different instruction | Requires a 3-instruction overlap not present in current sequences |
-
-These are architecturally meaningful corner cases, not random gaps. All three are closeable with one additional directed closure sequence.
+These can be closed with an additional directed coverage-closure sequence.
 
 ---
 
-## How to Run (EDA Playground — Aldec Riviera-PRO)
+# Implementation 2: Assembly-Driven Verification
 
-### File Setup
+## Purpose
 
-Add all files to the EDA Playground project:
+The assembly implementation validates the CPU from a software-visible perspective. Instead of directly constructing instruction words inside a UVM sequence, the test is written as a human-readable RISC-V assembly file.
 
-| File | Role |
-|------|------|
-| `design.sv` | DUT — RV32I pipelined CPU |
-| `cpu_if.sv` | Interface |
-| `cpu_pkg.sv` | UVM package (transactions, sequences, driver, monitor, scoreboard, RAL, tests) |
-| `cpu_sva.sv` | SVA checker + bind |
-| `cpu_coverage.sv` | Functional coverage + bind |
-| `testbench.sv` | Top-level UVM test runner |
-| `golden_model.c` | DPI-C ISA reference model |
-| `run.bash` | Build and run script |
+This makes the statement **“wrote a directed assembly test program”** technically accurate because the instruction sequence exists in a separate `.S` source file and is assembled before simulation.
 
-### Settings
+## Assembly Verification Flow
 
-- Simulator: Aldec Riviera-PRO (UVM 1.2, DPI-C)
-- Top module: `tb_top`
-- Enable UVM 1.2 library
-- Enable Run Bash option
+```text
+hazard_test.S
+      |
+      v
+rv32i_subset_asm.py
+      |
+      v
+hazard_test.hex
+      |
+      +--> DUT instr_mem[0:255]
+      |
+      +--> DPI-C golden model
+                 |
+                 v
+        CPU executes to ECALL
+                 |
+                 v
+ Registers + memory + PC + halt compared
+```
 
-### Running
+The active command in `run.bash` is:
 
 ```bash
-chmod +x run.bash && ./run.bash
+python3 rv32i_subset_asm.py hazard_test.S hazard_test.hex
+```
+
+Therefore, the Python code is used on every run. If assembly fails, `set -euo pipefail` stops the build before simulation.
+
+## Assembly-Version Files
+
+| File | Role |
+|---|---|
+| `hazard_test.S` | Directed RISC-V assembly test program |
+| `rv32i_subset_asm.py` | Two-pass assembler for the implemented RV32I subset |
+| `hazard_test.hex` | Generated 32-bit machine-code image, one instruction per line |
+| `testbench.sv` | Plain SystemVerilog loader, monitor, checker, and manual coverage collector |
+| `golden_model.c` | Same architectural DPI-C reference model |
+| `design.sv` | Same pipelined CPU RTL |
+| `run.bash` | Assembles, compiles, and runs the test |
+
+## Python RV32I-Subset Assembler
+
+**File:** `rv32i_subset_asm.py`
+
+The assembler supports exactly the CPU subset:
+
+```text
+ADD, SUB, AND, OR, ADDI, LW, SW, BEQ, LUI, JAL, ECALL
+```
+
+Key capabilities:
+
+- Parses registers `x0` through `x31`.
+- Supports signed immediate validation.
+- Encodes R, I, S, B, U, and J formats.
+- Resolves BEQ and JAL labels in a two-pass flow.
+- Rejects unsupported instructions and invalid operand ranges.
+- Produces one 32-bit hexadecimal instruction per output line for `$readmemh`.
+
+## Directed Assembly Program
+
+**File:** `hazard_test.S`
+
+The 19-instruction program exercises:
+
+- ADD, SUB, AND, and OR
+- ADDI dependencies
+- LW followed immediately by a dependent ADD
+- SW using a recently produced value
+- Taken BEQ with two flushed sequential instructions
+- LUI upper-immediate write
+- JAL redirect, link-register write, and flushed sequential instruction
+- Attempted write to `x0`
+- ECALL halt
+
+Representative sections:
+
+```asm
+# EX/MEM forwarding
+addi x1, x0, 5
+addi x2, x1, 3
+
+# Load-use stall
+lw   x4, 0(x0)
+add  x5, x4, x3
+
+# BEQ flush
+beq  x1, x1, branch_target
+addi x6, x0, 9
+addi x6, x0, 8
+
+# JAL flush and link write
+jal  x9, jump_target
+addi x10, x0, 111
+
+# x0 hardwiring
+addi x0, x0, 99
+
+ecall
+```
+
+## Plain-SystemVerilog Self-Checking Testbench
+
+The assembly testbench deliberately avoids UVM, covergroups, and concurrent SVA so it can run when the shared Riviera EDU advanced-verification license is unavailable.
+
+It performs the following operations:
+
+1. Loads `hazard_test.hex` with `$readmemh`.
+2. Initializes all instruction-memory locations to NOP and all data-memory locations to zero.
+3. Preloads `data_mem[0] = 100` for the LW test.
+4. Loads the same instruction and data images into the DPI-C golden model.
+5. Runs the golden model to completion.
+6. Releases the DUT from reset and waits for ECALL/HALT.
+7. Compares all 32 registers.
+8. Compares all 256 data-memory words.
+9. Compares final PC and halt state.
+10. Checks required hazard events and instruction execution.
+
+## Procedural Pipeline Checks
+
+Because concurrent SVA is not used in this version, equivalent cycle-based procedural checks verify:
+
+- PC hold during load-use stall
+- Bubble insertion after stall
+- ID/EX flush after BEQ/JAL redirect
+- Sticky halt behavior
+- PC freeze after halt
+- PC word alignment
+- `x0` hardwiring
+
+Manual event counters track:
+
+- Load-use stalls
+- Taken BEQ redirects
+- JAL redirects
+- EX/MEM forwarding
+- MEM/WB forwarding
+- Execution of all 10 functional instructions
+
+## Assembly-Test Results
+
+| Result | Value |
+|---|---:|
+| Assembly instructions generated | 19 |
+| Halt cycle | 23 |
+| Final PC | `0x00000048` |
+| Registers matching golden model | 32/32 |
+| Data-memory words matching golden model | 256/256 |
+| Load-use stalls observed | 1 |
+| Taken BEQ redirects observed | 1 |
+| JAL redirects observed | 1 |
+| EX/MEM forwarding events observed | 3 |
+| MEM/WB forwarding events observed | 3 |
+| Functional instructions observed | 10/10 |
+| Final test result | **44 passed, 0 failed** |
+
+The assembly test also confirmed:
+
+- `x6` remained zero after the taken BEQ flushed two wrong-path ADDI instructions.
+- `x10` remained zero after JAL flushed the following ADDI instruction.
+- `x9` received the JAL link address `0x0000003c`.
+- `x0` remained zero after `addi x0, x0, 99`.
+- `data_mem[1]` received the expected stored value.
+
+---
+
+## How to Run
+
+### A. UVM/SVA/Coverage Version
+
+Run from the repository root:
+
+```bash
+chmod +x run.bash
+./run.bash
+```
+
+Required simulator capabilities:
+
+- SystemVerilog
+- UVM 1.2
+- DPI-C
+- Concurrent SVA
+- Functional covergroups and ACDB coverage
+
+The script:
+
+1. Compiles `golden_model.c` into `libgolden.so`.
+2. Compiles the RTL, UVM testbench, SVA, and coverage modules.
+3. Runs `cpu_hazard_test`.
+4. Runs `cpu_rand_test`.
+5. Merges ACDB databases.
+6. Generates `coverage_final.txt`.
+
+> On a shared EDA Playground Riviera-PRO EDU session, advanced-verification license tokens may be unavailable even when the same project previously ran. In that case, use the assembly/plain-SV flow below or run the UVM flow on Questa, VCS, Xcelium, or a fully licensed Riviera installation.
+
+### B. Assembly/Plain-SystemVerilog Version
+
+Run from the assembly directory:
+
+```bash
+cd "rv32I 5-stage pipeline CPU_Assembly version"
+chmod +x run.bash
+./run.bash
 ```
 
 The script:
-1. Compiles `golden_model.c` into `libgolden.so`
-2. Compiles all SystemVerilog (`design.sv`, `testbench.sv`, `cpu_sva.sv`, `cpu_coverage.sv`)
-3. Runs `cpu_hazard_test` — saves `fcover_hazard.acdb`
-4. Runs `cpu_rand_test` — saves `fcover_rand.acdb`
-5. Merges ACDB databases and prints full coverage + assertion report
 
-### Run Options
+1. Runs the Python assembler.
+2. Regenerates `hazard_test.hex` from `hazard_test.S`.
+3. Builds `libgolden.so`.
+4. Removes stale Riviera work libraries and old coverage databases.
+5. Compiles `design.sv` and the plain `testbench.sv`.
+6. Runs the self-checking assembly test.
 
-To run individual tests:
+Expected final result:
+
+```text
+Implemented instructions observed = 10/10
+FINAL RESULT: 44 checks passed, 0 checks failed
+TEST PASS: assembly program, hazards, and golden comparison passed
 ```
-+UVM_TESTNAME=cpu_hazard_test
-+UVM_TESTNAME=cpu_rand_test
-```
+
+---
+
+## Why Both Implementations Are Included
+
+The two environments are complementary rather than redundant:
+
+- The **UVM implementation** demonstrates reusable agents, sequences, RAL, scoreboarding, constrained-random regression, SVA, and coverage closure.
+- The **assembly implementation** demonstrates processor validation from the programmer’s view, exact control over instruction dependencies, label-based branch/jump targets, automated machine-code generation, and direct loading into instruction memory.
+- Keeping them separate makes each flow easier to understand and avoids coupling the assembly demonstration to a simulator feature license.
+- Both reuse the same RTL and independent DPI-C architectural model, allowing their results to be cross-checked consistently.
 
 ---
 
 ## Verification Summary
 
-### Achieved
+### UVM flow
 
-- Full ISA-level functional correctness across 11 programs (1 directed + 10 constrained-random), zero register or memory mismatches
-- All 7 SVA protocol assertions pass with zero violations
-- All 11 RV32I instruction kinds confirmed exercised (100% `cg_rv32i_instrs`)
-- All 8 RV32I opcodes confirmed exercised (100% `cg_rv32i_opcodes`)
-- All 4 forwarding paths individually confirmed active (100% `cg_forward_paths`)
-- Pipeline events (stall, branch-taken, jump-taken, forwarding) all individually confirmed
-- 97.656% overall ACDB coverage closure
+- 11/11 programs matched the DPI-C golden model.
+- Zero register, memory, PC, or halt mismatches.
+- Seven SVA properties passed with zero failures.
+- 100% opcode, instruction-kind, and forwarding-path coverage.
+- 97.656% overall merged functional coverage.
 
-### Remaining Gaps
+### Assembly flow
 
-- Three cross bins in `cg_pipeline_events`: `<taken,forwarded>`, `<jump,forwarded>`, `<stall,forwarded>` — require a dedicated closure sequence targeting simultaneous hazard + forwarding scenarios
-- LUI exercised only once; more LUI randomization would strengthen upper-immediate coverage
+- A real `.S` program was converted to 19 machine-code words by the Python assembler.
+- All 10 functional RV32I instructions were executed.
+- Load-use, EX/MEM forwarding, MEM/WB forwarding, BEQ flush, JAL flush, and x0 hardwiring were observed.
+- All 32 registers and all 256 memory words matched the DPI-C reference model.
+- 44 checks passed with zero failures.
+
+---
+
+## Skills Demonstrated
+
+- SystemVerilog RTL and five-stage pipeline design
+- UVM 1.2 testbench architecture
+- Directed and constrained-random stimulus
+- SystemVerilog Assertions
+- Functional coverage and coverage crosses
+- RAL and HDL backdoor access
+- DPI-C integration with a C architectural model
+- RISC-V instruction encoding and immediate decoding
+- Assembly-level directed processor testing
+- Python-based assembler development
+- Hazard, forwarding, stall, flush, and architectural-state debugging
