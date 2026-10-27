@@ -1,0 +1,70 @@
+================ fault m1 ================
+  DETECTED  cpu_pipeline_test : 13 UVM_ERROR line(s)   [ CPU_SB=8 RETIRE_CHECKER=5 ]
+      [RETIRE_CHECKER] prog 3 (pipe_loaduse) retire #4 pc=0x00000010: 1 cycle(s) after the previous retire, expected 2
+      [RETIRE_CHECKER] prog 3 (pipe_loaduse) retire #9 pc=0x00000024: 1 cycle(s) after the previous retire, expected 2
+  DETECTED  cpu_cache_test : 2 UVM_ERROR line(s)   [ CPU_SB=2 ]
+      [CPU_SB] MISMATCH prog 1 (cache_levels): x18 Got 0x00000000, Expected 0x00000022
+      [CPU_SB] FAILED with 1 mismatching program(s)
+  DETECTED  cpu_status_test : 20 UVM_ERROR line(s)   [ CPU_DRIVER=9 CPU_SB=11 ]
+      [CPU_DRIVER] program 1 'st_misalign_lw_l1' did not halt within 2000 cycles (pc=0x00000114)
+      [CPU_DRIVER] program 2 'st_misalign_sw_l1' did not halt within 2000 cycles (pc=0x00000114)
+  DETECTED  cpu_mem_test : 2 UVM_ERROR line(s)   [ CPU_SB=2 ]
+      [CPU_SB] MISMATCH prog 1 (mem_ext_traffic): x11 Got 0x00000011, Expected 0x00000022
+      [CPU_SB] FAILED with 1 mismatching program(s)
+================ fault m2 ================
+  DETECTED  cpu_pipeline_test : 6 UVM_ERROR line(s)   [ CPU_SB=3 MEM_CHECKER=3 ]
+      [MEM_CHECKER] served by L2 but the cache model predicts IMC: prog 6 cyc 26 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+      [MEM_CHECKER] stalled 0 cycle(s), expected 7: prog 6 cyc 26 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+  DETECTED  cpu_cache_test : 56 UVM_ERROR line(s)   [ CPU_SB=5 MEM_CHECKER=51 ]
+      [MEM_CHECKER] served by L2 but the cache model predicts IMC: prog 1 cyc 22 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+      [MEM_CHECKER] stalled 0 cycle(s), expected 7: prog 1 cyc 22 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+  not seen  cpu_status_test
+  DETECTED  cpu_mem_test : 9 UVM_ERROR line(s)   [ CPU_SB=4 MEM_CHECKER=5 ]
+      [MEM_CHECKER] served by L2 but the cache model predicts IMC: prog 1 cyc 30 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+      [MEM_CHECKER] stalled 0 cycle(s), expected 7: prog 1 cyc 30 LW EXT/L2 addr=0x00000500 data=0x00000011 stall=0                        
+================ fault m3 ================
+  not seen  cpu_pipeline_test
+  not seen  cpu_cache_test
+  DETECTED  cpu_status_test : 4 UVM_ERROR line(s)   [ CPU_SB=4 ]
+      [CPU_SB] MISMATCH prog 9 (st_oor_csr_lw): x9 Got 0x0000000a, Expected 0x00000000
+      [CPU_SB] MISMATCH prog 9 (st_oor_csr_lw): oor Got 0x00000000, Expected 0x00000001
+  not seen  cpu_mem_test
+================ fault m4 ================
+  DETECTED  cpu_pipeline_test : 5 UVM_ERROR line(s)   [ MEM_CHECKER=4 RETIRE_CHECKER=1 ]
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 4 cyc 20 LW EXT/IMC addr=0x00000400 data=0x00000055 stall=8                        
+      [RETIRE_CHECKER] prog 4 (pipe_stall_resume) retire #4 pc=0x00000010: 9 cycle(s) after the previous retire, expected 8
+  DETECTED  cpu_cache_test : 25 UVM_ERROR line(s)   [ MEM_CHECKER=25 ]
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 1 cyc 21 LW EXT/IMC addr=0x00000400 data=0x00000011 stall=8                        
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 1 cyc 31 LW EXT/IMC addr=0x00000500 data=0x00000000 stall=8                        
+  DETECTED  cpu_status_test : 1 UVM_ERROR line(s)   [ MEM_CHECKER=1 ]
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 6 cyc 21 LW EXT/IMC addr=0x00000400 data=0x00000000 stall=8                        
+  DETECTED  cpu_mem_test : 3 UVM_ERROR line(s)   [ MEM_CHECKER=3 ]
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 1 cyc 27 LW EXT/IMC addr=0x00000400 data=0x00000011 stall=8                        
+      [MEM_CHECKER] stalled 8 cycle(s), expected 7: prog 1 cyc 39 LW EXT/IMC addr=0x00000500 data=0x00000022 stall=8                        
+================ fault m5 ================
+  DETECTED  cpu_pipeline_test : 18 UVM_ERROR line(s)   [ AXI_SVA=1 CPU_SB=17 ]
+      [CPU_SB] MISMATCH prog 4 (pipe_stall_resume): x3 Got 0x00000000, Expected 0x00000055
+      [CPU_SB] MISMATCH prog 4 (pipe_stall_resume): x6 Got 0x00000000, Expected 0x00000055
+  DETECTED  cpu_cache_test : 31 UVM_ERROR line(s)   [ AXI_SVA=1 CPU_SB=30 ]
+      [CPU_SB] MISMATCH prog 1 (cache_levels): x2 Got 0x00000000, Expected 0x00000011
+      [CPU_SB] MISMATCH prog 1 (cache_levels): x3 Got 0x00000000, Expected 0x00000011
+  DETECTED  cpu_status_test : 4 UVM_ERROR line(s)   [ AXI_SVA=1 CPU_SB=3 ]
+      [CPU_SB] MISMATCH prog 6 (st_misalign_twin): EXT[0x0404] Got 0x00000000, Expected 0x00000005
+      [CPU_SB] MISMATCH prog 16 (st_trap_after_stall): EXT[0x0400] Got 0x00000000, Expected 0x00000005
+  DETECTED  cpu_mem_test : 9 UVM_ERROR line(s)   [ AXI_SVA=1 CPU_SB=8 ]
+      [CPU_SB] MISMATCH prog 1 (mem_ext_traffic): x3 Got 0x00000000, Expected 0x00000011
+      [CPU_SB] MISMATCH prog 1 (mem_ext_traffic): x4 Got 0x00000000, Expected 0x00000011
+================ fault m6 ================
+  DETECTED  cpu_pipeline_test : 29 UVM_ERROR line(s)   [ BUS_CHECKER=8 CPU_SB=21 ]
+      [CPU_SB] MISMATCH prog 4 (pipe_stall_resume): x3 Got 0x00000000, Expected 0x00000055
+      [CPU_SB] MISMATCH prog 4 (pipe_stall_resume): x6 Got 0x00000000, Expected 0x00000055
+  DETECTED  cpu_cache_test : 41 UVM_ERROR line(s)   [ BUS_CHECKER=10 CPU_SB=31 ]
+      [CPU_SB] MISMATCH prog 1 (cache_levels): x2 Got 0x00000000, Expected 0x00000011
+      [CPU_SB] MISMATCH prog 1 (cache_levels): x3 Got 0x00000000, Expected 0x00000011
+  DETECTED  cpu_status_test : 5 UVM_ERROR line(s)   [ CPU_SB=5 ]
+      [CPU_SB] MISMATCH prog 6 (st_misalign_twin): EXT[0x0400] Got 0x00000005, Expected 0x00000000
+      [CPU_SB] MISMATCH prog 6 (st_misalign_twin): EXT[0x0404] Got 0x00000000, Expected 0x00000005
+  DETECTED  cpu_mem_test : 16 UVM_ERROR line(s)   [ BUS_CHECKER=6 CPU_SB=10 ]
+      [CPU_SB] MISMATCH prog 1 (mem_ext_traffic): x3 Got 0x00000000, Expected 0x00000011
+      [CPU_SB] MISMATCH prog 1 (mem_ext_traffic): x4 Got 0x00000000, Expected 0x00000011
+(logs in sim/uvm_run/mutants/)

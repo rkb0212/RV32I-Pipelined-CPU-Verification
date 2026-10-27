@@ -1,0 +1,190 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/alu.sv" into library work
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/control_unit.sv" into library work
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/csr_regs.sv" into library work
+INFO: [VRFC 10-311] analyzing module csr_regs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/data_memory.sv" into library work
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/design_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module design_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/imc.sv" into library work
+INFO: [VRFC 10-311] analyzing module imc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/l2_cache.sv" into library work
+INFO: [VRFC 10-311] analyzing module l2_cache
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/l3_cache.sv" into library work
+INFO: [VRFC 10-311] analyzing module l3_cache
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/lsu.sv" into library work
+INFO: [VRFC 10-311] analyzing module lsu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/regfile.sv" into library work
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_if.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_probe_if.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/axi_sva.sv" into library work
+INFO: [VRFC 10-311] analyzing module axi_sva
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_pkg.sv" into library work
+WARNING: [VRFC 10-9049] illegal foreach loop specification [/work/RV32i_new_str/tb/cpu_coverage.sv:40]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/tb_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_top
+Multi-threading is on. Using 8 slave threads.
+Running compilation flow/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/g++  -fPIC -c -Wa,-W -fPIC -m64 -B/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../../binutils-2.42/bin/    -I"/opt/Xilinx/2025.2/data/xsim/include" -I"/opt/Xilinx/2025.2/data/xsim/systemc" "/work/RV32i_new_str/tb/golden_model.cpp" -o "xsim.dir/work/xsc/golden_model.lnx64.o" -DXILINX_SIMULATOR -Wno-deprecated-declarations 
+Done compilation
+Linking with command:
+/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/g++ -Wa,-W  -O -fPIC  -m64  -shared  -o "xsim.dir/work/xsc/dpi.so" "xsim.dir/work/xsc/golden_model.lnx64.o"     -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o -lxv_simulator_kernel  -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -Wl,--disable-new-dtags -Wl,-rpath=/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -lxv_xsim_systemc -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/Default  -B/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../../binutils-2.42/bin/ 
+
+Done linking: "xsim.dir/work/xsc/dpi.so"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /opt/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab -L uvm -sv_lib dpi -debug typical tb_top -s snap -timescale 1ns/1ps -log xelab.log 
+Multi-threading is on. Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'p' for virtual method 'write' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_predictor.sv:23]
+WARNING: [VRFC 10-3119] argument name 'p' for virtual method 'write' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_checkers.sv:195]
+WARNING: [VRFC 10-3120] argument name 'p' for virtual method 'write' in subclass 'cpu_predictor' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_predictor.sv:23]
+WARNING: [VRFC 10-3120] argument name 'p' for virtual method 'write' in subclass 'cpu_bus_checker' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_checkers.sv:195]
+WARNING: [VRFC 10-9049] illegal foreach loop specification [/work/RV32i_new_str/tb/cpu_coverage.sv:40]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package work.cpu_pkg
+WARNING: [XSIM 43-3373] "/work/RV32i_new_str/tb/cpu_sequences.sv" Line 1100. System function $value$plusargs is used as system task. This system function should have a LHS e.g. x=$value$plusargs().
+Compiling module work.cpu_if_default
+Compiling module work.retire_if_default
+Compiling module work.mem_if_default
+Compiling module work.axi_if_default
+Compiling module work.axi_sva_default
+Compiling module work.control_unit
+Compiling module work.regfile
+Compiling module work.alu
+Compiling module work.lsu
+Compiling module work.data_memory_default
+Compiling module work.csr_regs_default
+Compiling module work.l2_cache_default
+Compiling module work.l3_cache_default
+Compiling module work.imc_default
+Compiling module work.design_top
+Compiling module work.tb_top
+Built simulation snapshot snap
+
+=================== cpu_known_issue_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:47:27 2026
+# Process ID         : 30780
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_known_issue_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_known_issue_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8546 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_known_issue_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_known_issue_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 335000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 1 (ki_csr_lw): oor Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 335000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 1 (ki_csr_lw): PINNED oor flags Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 725000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 2 (ki_csr_sw): oor Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 725000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 2 (ki_csr_sw): PINNED oor flags Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 1115000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 3 (ki_hole_lw): oor Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 1115000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 3 (ki_hole_lw): PINNED oor flags Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 1505000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 4 (ki_hole_sw): oor Got 0x00000001, Expected 0x00000000
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(55) @ 1505000: uvm_test_top.env.scoreboard [CPU_SB] MISMATCH prog 4 (ki_hole_sw): PINNED oor flags Got 0x00000001, Expected 0x00000000
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1755000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_ERROR /work/RV32i_new_str/tb/cpu_scoreboard.sv(168) @ 1755000: uvm_test_top.env.scoreboard [CPU_SB] FAILED with 4 mismatching program(s)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 1755000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 0 write(s), 0 read(s) | max_latency=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 1755000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 0 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]          instruction kinds (model)   6/15   40.0%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_JAL, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]     immediates and offsets (model)   3/8    37.5%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG, OFF_ZERO
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]     memory region x op x alignment   6/20   30.0%   MISSING: M_L1_LW_ALIGNED, M_L1_LW_MISALIGNED, M_L1_SW_ALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_ALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_SW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_SW_ALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]                trap causes (model)   2/5    40.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]              CSR registers (model)   3/20   15.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]               control flow (model)   1/10   10.0%   MISSING: LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]            external load served by   0/3     0.0%   MISSING: LD_L2, LD_L3, LD_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]           external store vs caches   0/4     0.0%   MISSING: ST_L2_HIT, ST_L2_MISS, ST_L3_HIT, ST_L3_MISS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]        stall length by access kind   2/6    33.3%   MISSING: NONE_L1, NONE_HIT, ST_4, LD_IMC_7
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]              L2 index touched (64)   0/64    0.0%   MISSING: idx0, idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]       L3 index bucket touched (16)   0/16    0.0%   MISSING: idx0-7, idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]              events close together   1/4    25.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]                        AXI traffic   0/11    0.0%   MISSING: WR_LAT_LE4, WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_5_8, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0400_07FF, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_0, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1755000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 1755000: reporter [COVERAGE] COVERAGE TOTAL: 30/214 bins hit (14.0%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 1755000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 16 access(es) | L1=0 CSR=14 EXT=0 GAP=2 | stalled=0 max_stall=0 | misaligned=4 oor=4
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 1755000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=0 | external stores=0 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 1755000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 48 instruction(s) retired in 4 program(s) | reg_writes=36 stores=8 ecalls=4 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 1755000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=4 match=0 mismatch=4 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 1755000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=4 traps=4 misalign=4 oor=4 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1755000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   31
+UVM_WARNING :    0
+UVM_ERROR :    9
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]    10
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 1755 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614044 KB (Peak: 657176 KB), Simulation CPU Usage: 1280 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:47:31 2026...
+FAIL cpu_known_issue_test: UVM_ERROR=9 UVM_FATAL=0; (see /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_known_issue_test.log)

@@ -1,0 +1,86 @@
+RV32I UVM TESTBENCH - RUN COMMANDS
+===================================
+Run everything from:  /work/RV32i_new_str/sim      (use "bash", /work is noexec)
+NOTE: the text after "//" is only a description. Do NOT paste it into the terminal
+      (the shell would take it as extra arguments). Copy only the part before "//".
+
+
+-------------------------------------------------------------------------------
+1. EACH TEST INDIVIDUALLY  (full log printed on the terminal)
+-------------------------------------------------------------------------------
+bash run_uvm_xsim.sh cpu_hazard_test        // forwarding, load-use stall, BEQ, JAL (golden model + retire checker)
+bash run_uvm_xsim.sh cpu_trap_test          // misaligned LW/SW/JAL traps, handler, MRET (status checker)
+bash run_uvm_xsim.sh cpu_halt_test          // 8 halt cases: ECALL, HALT_CTRL store, halt during stall/after branch/in handler
+bash run_uvm_xsim.sh cpu_mem_test           // CSR window, L2/L3/iMC traffic, read-only CSR write, address hole
+bash run_uvm_xsim.sh cpu_decode_test        // immediate extremes, LW/SW offsets, branches, rd=x0, unsupported opcodes as NOP
+bash run_uvm_xsim.sh cpu_pipeline_test      // back-to-back ops, forwarding chains, exact retire spacing (1/2/5/8 cycles)
+bash run_uvm_xsim.sh cpu_cache_test         // L1/L2/L3/iMC levels, aliasing addresses, reference cache model, bus checker
+bash run_uvm_xsim.sh cpu_status_test        // 18 programs: one per fault output, each with a legal twin that must not raise it
+bash run_uvm_xsim.sh cpu_csr_test           // CSR registers: SCRATCH, read-only writes, MTVEC/MEPC masks, MCAUSE/MTVAL, MRET, counters
+bash run_uvm_xsim.sh cpu_runoff_test        // PC runs past the last instruction word and wraps to word 0 (fall-through, branch, JAL)
+bash run_uvm_xsim.sh cpu_reset_test         // reset in the middle of a program (10 fixed + random cut points), then probe = all zero
+bash run_uvm_xsim.sh cpu_rand_test          // random programs (default 50): ALU, loads/stores, branches, faults, both halt styles
+bash run_uvm_xsim.sh cpu_regression_test    // every sequence above in one run (119 programs) - the full coverage run
+
+
+-------------------------------------------------------------------------------
+2. TEST KNOBS
+-------------------------------------------------------------------------------
+bash run_uvm_xsim.sh cpu_rand_test +NUM_RAND=500                      // random test with 500 programs
+bash run_uvm_xsim.sh cpu_rand_test +NUM_RAND=500 +RAND_OPS=32         // 500 programs, 32 operations per program (max 48)
+bash run_uvm_xsim.sh cpu_rand_test +NUM_RAND=500 +RAND_OPS=32 -log rand.log   // same, log saved to rand.log
+bash run_uvm_xsim.sh cpu_reset_test +RST_RAND=20                      // reset test with 20 extra random reset points (default 6)
+
+
+-------------------------------------------------------------------------------
+3. SEVERAL TESTS / ALL TESTS TOGETHER
+-------------------------------------------------------------------------------
+bash run_uvm_xsim.sh cpu_trap_test cpu_mem_test            // two chosen tests, one after another
+bash run_uvm_xsim.sh all                                   // all 13 tests, PASS/FAIL table at the end
+bash run_uvm_xsim.sh all -log all.log                      // all 13 tests, log saved, one PASS/FAIL line per test on screen
+bash run_uvm_xsim.sh all -v UVM_HIGH -log all_high.log     // all tests, every retire/memory/AXI/status item printed in the log
+bash run_uvm_xsim.sh cpu_regression_test -log reg.log      // regression only, log saved
+
+
+-------------------------------------------------------------------------------
+4. FUNCTIONAL COVERAGE AND ASSERTION REPORTS
+-------------------------------------------------------------------------------
+bash run_uvm_xsim.sh cpu_regression_test -cov              // regression, then print only the functional-coverage report
+bash run_uvm_xsim.sh cpu_regression_test -sva              // regression, then print only the AXI assertion result + traffic watched
+bash run_uvm_xsim.sh all -cov -sva -log all.log            // all tests with both reports; full log in all.log
+grep "COVERAGE TOTAL" reg.log                              // total bins hit (from a saved log)
+grep MISSING reg.log                                       // bins no test hit
+grep -c AXI_SVA all.log                                    // number of assertion failure lines (0 = none fired)
+grep "axi_checker summary" all.log                         // AXI traffic the assertions watched (must be non-zero)
+
+
+-------------------------------------------------------------------------------
+5. KNOWN-ISSUE TEST  (expected to FAIL on this DUT = documented DUT finding)
+-------------------------------------------------------------------------------
+bash run_uvm_xsim.sh cpu_known_issue_test -log ki.log      // misaligned access in CSR-beyond-window / hole: DUT raises both flags, rule says one
+grep "PINNED oor" ki.log                                   // the 4 expected mismatches (ki_csr_lw, ki_csr_sw, ki_hole_lw, ki_hole_sw)
+
+
+-------------------------------------------------------------------------------
+6. ERROR INJECTION (MUTANTS) - a copy of dut/ is broken, dut/ itself is never touched
+-------------------------------------------------------------------------------
+bash run_mutants.sh m1                                     // m1: load-use stall removed          (run on pipeline, cache, status, mem tests)
+bash run_mutants.sh m2                                     // m2: L2 hit ignores the tag
+bash run_mutants.sh m3                                     // m3: CSR out-of-range limit off by one
+bash run_mutants.sh m4                                     // m4: iMC latency 5 instead of 4
+bash run_mutants.sh m5                                     // m5: L3 write strobe 4'h7 instead of 4'hF
+bash run_mutants.sh m6                                     // m6: L3 write address XOR 4
+bash run_mutants.sh 2>&1 | tee mutants.log                 // all six mutants, output also saved to mutants.log
+bash run_mutants.sh m2 cpu_cache_test cpu_mem_test         // one mutant (m2), only the chosen tests
+bash run_mutants.sh m5 cpu_regression_test                 // one mutant (m5) against the whole regression
+bash run_mutants.sh m3 cpu_status_test 2>&1 | tee m3.log   // one mutant, one test, output saved to m3.log
+# DETECTED = test failed with UVM_ERROR lines. "not seen" = that test does not exercise the broken feature.
+# Per-test xsim logs of every mutant run are kept in sim/uvm_run/mutants/
+
+
+-------------------------------------------------------------------------------
+7. WHERE THE LOGS ARE
+-------------------------------------------------------------------------------
+sim/uvm_run/build/xsim_<test>.log                          // raw xsim log of the last run of each test
+sim/uvm_run/mutants/                                       // logs of every mutant run
+help: bash run_uvm_xsim.sh -h                              // all options

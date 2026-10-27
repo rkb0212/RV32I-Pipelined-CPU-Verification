@@ -1,0 +1,1749 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/alu.sv" into library work
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/control_unit.sv" into library work
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/csr_regs.sv" into library work
+INFO: [VRFC 10-311] analyzing module csr_regs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/data_memory.sv" into library work
+INFO: [VRFC 10-311] analyzing module data_memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/design_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module design_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/imc.sv" into library work
+INFO: [VRFC 10-311] analyzing module imc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/l2_cache.sv" into library work
+INFO: [VRFC 10-311] analyzing module l2_cache
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/l3_cache.sv" into library work
+INFO: [VRFC 10-311] analyzing module l3_cache
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/lsu.sv" into library work
+INFO: [VRFC 10-311] analyzing module lsu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/dut/regfile.sv" into library work
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_if.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_probe_if.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/axi_sva.sv" into library work
+INFO: [VRFC 10-311] analyzing module axi_sva
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/cpu_pkg.sv" into library work
+WARNING: [VRFC 10-9049] illegal foreach loop specification [/work/RV32i_new_str/tb/cpu_coverage.sv:40]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/work/RV32i_new_str/tb/tb_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_top
+Multi-threading is on. Using 8 slave threads.
+Running compilation flow/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/g++  -fPIC -c -Wa,-W -fPIC -m64 -B/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../../binutils-2.42/bin/    -I"/opt/Xilinx/2025.2/data/xsim/include" -I"/opt/Xilinx/2025.2/data/xsim/systemc" "/work/RV32i_new_str/tb/golden_model.cpp" -o "xsim.dir/work/xsc/golden_model.lnx64.o" -DXILINX_SIMULATOR -Wno-deprecated-declarations 
+Done compilation
+Linking with command:
+/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/g++ -Wa,-W  -O -fPIC  -m64  -shared  -o "xsim.dir/work/xsc/dpi.so" "xsim.dir/work/xsc/golden_model.lnx64.o"     -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o -lxv_simulator_kernel  -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -Wl,--disable-new-dtags -Wl,-rpath=/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../lib64 -lxv_xsim_systemc -L/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/Default  -B/opt/Xilinx/2025.2/Vivado/lib/lnx64.o/../../tps/lnx64/gcc-9.3.0/bin/../../binutils-2.42/bin/ 
+
+Done linking: "xsim.dir/work/xsc/dpi.so"
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /opt/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab -L uvm -sv_lib dpi -debug typical tb_top -s snap -timescale 1ns/1ps -log xelab.log 
+Multi-threading is on. Using 8 slave threads.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by AMD, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3119] argument name 'p' for virtual method 'write' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_predictor.sv:23]
+WARNING: [VRFC 10-3119] argument name 'p' for virtual method 'write' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_checkers.sv:195]
+WARNING: [VRFC 10-3120] argument name 'p' for virtual method 'write' in subclass 'cpu_predictor' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_predictor.sv:23]
+WARNING: [VRFC 10-3120] argument name 'p' for virtual method 'write' in subclass 'cpu_bus_checker' does not match the argument name 't' in superclass [/work/RV32i_new_str/tb/cpu_checkers.sv:195]
+WARNING: [VRFC 10-9049] illegal foreach loop specification [/work/RV32i_new_str/tb/cpu_coverage.sv:40]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package uvm.uvm_pkg
+Compiling package std.std
+Compiling package work.cpu_pkg
+WARNING: [XSIM 43-3373] "/work/RV32i_new_str/tb/cpu_sequences.sv" Line 1100. System function $value$plusargs is used as system task. This system function should have a LHS e.g. x=$value$plusargs().
+Compiling module work.cpu_if_default
+Compiling module work.retire_if_default
+Compiling module work.mem_if_default
+Compiling module work.axi_if_default
+Compiling module work.axi_sva_default
+Compiling module work.control_unit
+Compiling module work.regfile
+Compiling module work.alu
+Compiling module work.lsu
+Compiling module work.data_memory_default
+Compiling module work.csr_regs_default
+Compiling module work.l2_cache_default
+Compiling module work.l3_cache_default
+Compiling module work.imc_default
+Compiling module work.design_top
+Compiling module work.tb_top
+Built simulation snapshot snap
+
+=================== cpu_hazard_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:08 2026
+# Process ID         : 29103
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_hazard_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_hazard_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8556 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_hazard_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_hazard_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 325000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (hazard_branch_jump): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 575000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 575000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 0 write(s), 0 read(s) | max_latency=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 575000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 0 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]          instruction kinds (model)   9/15   60.0%   MISSING: I_SUB, I_AND, I_OR, I_BEQ_NOT_TAKEN, I_MRET, I_UNSUPPORTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]     immediates and offsets (model)   3/8    37.5%   MISSING: IMM_NEG, IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]     memory region x op x alignment   2/20   10.0%   MISSING: M_L1_LW_MISALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_ALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]              CSR registers (model)   0/20    0.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]     dependencies, load-use (model)   2/3    66.7%   MISSING: D_DIST3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]               control flow (model)   3/10   30.0%   MISSING: LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_BWD_TAKEN, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]            external load served by   0/3     0.0%   MISSING: LD_L2, LD_L3, LD_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]           external store vs caches   0/4     0.0%   MISSING: ST_L2_HIT, ST_L2_MISS, ST_L3_HIT, ST_L3_MISS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]        stall length by access kind   1/6    16.7%   MISSING: NONE_CSR, NONE_OTHER, NONE_HIT, ST_4, LD_IMC_7
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]              L2 index touched (64)   0/64    0.0%   MISSING: idx0, idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]       L3 index bucket touched (16)   0/16    0.0%   MISSING: idx0-7, idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]              events close together   0/4     0.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]                        AXI traffic   0/11    0.0%   MISSING: WR_LAT_LE4, WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_5_8, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0400_07FF, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 575000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 575000: reporter [COVERAGE] COVERAGE TOTAL: 23/214 bins hit (10.7%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 575000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 3 access(es) | L1=3 CSR=0 EXT=0 GAP=0 | stalled=0 max_stall=0 | misaligned=0 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 575000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=0 | external stores=0 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 575000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 14 instruction(s) retired in 1 program(s) | reg_writes=11 stores=2 ecalls=1 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 575000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=1 match=1 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 575000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=1 traps=0 misalign=0 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 575000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   32
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     2
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 575 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614040 KB (Peak: 657180 KB), Simulation CPU Usage: 1260 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:12 2026...
+PASS cpu_hazard_test
+
+=================== cpu_trap_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:14 2026
+# Process ID         : 29211
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_trap_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_trap_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8569 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_trap_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_trap_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 815000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (misalign_trap_lw_sw_jal): regs=31 L1=256 EXT=4096 retired=34 traps=4 faults(mis/oor/tgt)=3/0/1
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1065000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 1065000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 0 write(s), 0 read(s) | max_latency=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 1065000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 0 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]          instruction kinds (model)   6/15   40.0%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_LUI, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]     memory region x op x alignment   5/20   25.0%   MISSING: M_L1_LW_ALIGNED, M_L1_SW_ALIGNED, M_EXT_LW_ALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]                trap causes (model)   3/5    60.0%   MISSING: T_TARGET_BEQ, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]              CSR registers (model)   5/20   25.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MCAUSE_W, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]               control flow (model)   2/10   20.0%   MISSING: LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]            external load served by   0/3     0.0%   MISSING: LD_L2, LD_L3, LD_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]           external store vs caches   0/4     0.0%   MISSING: ST_L2_HIT, ST_L2_MISS, ST_L3_HIT, ST_L3_MISS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]        stall length by access kind   3/6    50.0%   MISSING: NONE_HIT, ST_4, LD_IMC_7
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]              L2 index touched (64)   0/64    0.0%   MISSING: idx0, idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]       L3 index bucket touched (16)   0/16    0.0%   MISSING: idx0-7, idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]              events close together   2/4    50.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]                        AXI traffic   0/11    0.0%   MISSING: WR_LAT_LE4, WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_5_8, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0400_07FF, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_0, TRAPS_1, TRAPS_2, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1065000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 1065000: reporter [COVERAGE] COVERAGE TOTAL: 36/214 bins hit (16.8%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 1065000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 20 access(es) | L1=2 CSR=17 EXT=1 GAP=0 | stalled=0 max_stall=0 | misaligned=3 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 1065000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=0 | external stores=0 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 1065000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 34 instruction(s) retired in 1 program(s) | reg_writes=28 stores=5 ecalls=1 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 1065000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=1 match=1 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 1065000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=1 traps=4 misalign=3 oor=0 target_faults=1
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1065000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   32
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     2
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 1065 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614044 KB (Peak: 657180 KB), Simulation CPU Usage: 1270 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:18 2026...
+PASS cpu_trap_test
+
+=================== cpu_halt_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:20 2026
+# Process ID         : 29319
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_halt_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_halt_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8587 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_halt_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_halt_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 155000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (halt_ecall): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 435000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (halt_software_csr): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 695000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (halt_during_ext_store): regs=31 L1=256 EXT=4096 retired=4 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 975000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (halt_after_ext_miss): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1205000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (halt_after_taken_branch): regs=31 L1=256 EXT=4096 retired=2 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1475000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (halt_in_trap_handler): regs=31 L1=256 EXT=4096 retired=5 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1745000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 7 (halt_sw_after_ext_store): regs=31 L1=256 EXT=4096 retired=5 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1945000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 8 (halt_back_to_back): regs=31 L1=256 EXT=4096 retired=2 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2195000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 2195000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 3 write(s), 1 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 2195000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 3 store(s) and 1 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]          instruction kinds (model)   5/15   33.3%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_LUI, I_BEQ_NOT_TAKEN, I_JAL, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]     memory region x op x alignment   4/20   20.0%   MISSING: M_L1_LW_ALIGNED, M_L1_SW_ALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]                trap causes (model)   1/5    20.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]              CSR registers (model)   2/20   10.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]                halt styles (model)   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]               control flow (model)   1/10   10.0%   MISSING: LU_ALU_RS1, LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]            external load served by   1/3    33.3%   MISSING: LD_L2, LD_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]        stall length by access kind   4/6    66.7%   MISSING: NONE_OTHER, NONE_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]              L2 index touched (64)   1/64    1.6%   MISSING: idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]       L3 index bucket touched (16)   1/16    6.2%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]              events close together   2/4    50.0%   MISSING: STALL_THEN_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]                        AXI traffic   3/11   27.3%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]               program size / traps   3/8    37.5%   MISSING: TRAPS_2, TRAPS_3PLUS, STEPS_11_50, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2195000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 2195000: reporter [COVERAGE] COVERAGE TOTAL: 41/214 bins hit (19.2%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 2195000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 8 access(es) | L1=1 CSR=3 EXT=4 GAP=0 | stalled=4 max_stall=7 | misaligned=1 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 2195000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=1 | external stores=3 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 2195000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 30 instruction(s) retired in 8 program(s) | reg_writes=18 stores=6 ecalls=6 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 2195000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=8 match=8 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 2195000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=8 traps=1 misalign=1 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2195000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   39
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     9
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 2195 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614076 KB (Peak: 657188 KB), Simulation CPU Usage: 1310 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:24 2026...
+PASS cpu_halt_test
+
+=================== cpu_mem_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:26 2026
+# Process ID         : 29427
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_mem_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_mem_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8604 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_mem_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_mem_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 625000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (mem_ext_traffic): regs=31 L1=256 EXT=4096 retired=15 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 935000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (mem_csr_and_gap): regs=29 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/2/0 (2 unknown value(s) not compared)
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 1185000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 1185000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 3 write(s), 3 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 1185000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 3 store(s) and 3 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]          instruction kinds (model)   6/15   40.0%   MISSING: I_SUB, I_AND, I_OR, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_JAL, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]     memory region x op x alignment   6/20   30.0%   MISSING: M_L1_LW_ALIGNED, M_L1_LW_MISALIGNED, M_L1_SW_ALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]              CSR registers (model)   7/20   35.0%   MISSING: C_CYCLE_W, C_INSTR_W, C_HALT_R, C_HALT_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MTVAL_R, C_MTVAL_W, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]               control flow (model)   2/10   20.0%   MISSING: LU_ALU_RS1, LU_BASE, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]            external load served by   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]    external load: previous -> this   4/9    44.4%   MISSING: L2_to_L2, L2_to_L3, L3_to_L2, L3_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]        stall length by access kind   5/6    83.3%   MISSING: NONE_L1
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]              L2 index touched (64)   2/64    3.1%   MISSING: idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]       L3 index bucket touched (16)   2/16   12.5%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]              events close together   1/4    25.0%   MISSING: STALL_THEN_TRAP, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]                        AXI traffic   5/11   45.5%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 1185000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 1185000: reporter [COVERAGE] COVERAGE TOTAL: 55/214 bins hit (25.7%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 1185000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 16 access(es) | L1=0 CSR=6 EXT=8 GAP=2 | stalled=6 max_stall=7 | misaligned=0 oor=2
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 1185000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=1 L3-hit=1 iMC=3 | external stores=3 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 1185000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 28 instruction(s) retired in 2 program(s) | reg_writes=20 stores=6 ecalls=2 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 1185000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=2 match=2 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 1185000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=2 traps=0 misalign=0 oor=2 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 1185000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   33
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     3
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 1185 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614068 KB (Peak: 657176 KB), Simulation CPU Usage: 1270 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:31 2026...
+PASS cpu_mem_test
+
+=================== cpu_decode_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:33 2026
+# Process ID         : 29534
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_decode_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_decode_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8596 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_decode_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_decode_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 275000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (decode_imm_extremes): regs=31 L1=256 EXT=4096 retired=15 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1155000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (decode_ldst_modes): regs=31 L1=256 EXT=4096 retired=23 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1835000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (decode_branches): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (decode_rd_x0): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2675000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (decode_unsupported): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2925000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 2925000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 3 write(s), 6 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 2925000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 3 store(s) and 6 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]          instruction kinds (model)  14/15   93.3%   MISSING: I_MRET
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]     immediates and offsets (model)   8/8   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]     memory region x op x alignment   4/20   20.0%   MISSING: M_L1_LW_MISALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]              CSR registers (model)   0/20    0.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]               control flow (model)   5/10   50.0%   MISSING: LU_ALU_RS1, LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]            external load served by   2/3    66.7%   MISSING: LD_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]    external load: previous -> this   3/9    33.3%   MISSING: L2_to_L2, L2_to_L3, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]        stall length by access kind   4/6    66.7%   MISSING: NONE_CSR, NONE_OTHER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]              L2 index touched (64)   3/64    4.7%   MISSING: idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]       L3 index bucket touched (16)   2/16   12.5%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]              events close together   1/4    25.0%   MISSING: STALL_THEN_TRAP, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]                        AXI traffic   5/11   45.5%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2925000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 2925000: reporter [COVERAGE] COVERAGE TOTAL: 59/214 bins hit (27.6%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 2925000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 19 access(es) | L1=9 CSR=0 EXT=10 GAP=0 | stalled=9 max_stall=7 | misaligned=0 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 2925000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=1 L3-hit=0 iMC=6 | external stores=3 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 2925000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 82 instruction(s) retired in 5 program(s) | reg_writes=70 stores=7 ecalls=5 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 2925000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=5 match=5 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 2925000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=5 traps=0 misalign=0 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2925000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   36
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     6
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 2925 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614076 KB (Peak: 657180 KB), Simulation CPU Usage: 1360 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:37 2026...
+PASS cpu_decode_test
+
+=================== cpu_pipeline_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:39 2026
+# Process ID         : 29642
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_pipeline_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_pipeline_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8582 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_pipeline_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_pipeline_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 235000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (pipe_nostall): regs=31 L1=256 EXT=4096 retired=11 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 495000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (pipe_forward_chain): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 855000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (pipe_loaduse): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1255000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (pipe_stall_resume): regs=31 L1=256 EXT=4096 retired=10 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1645000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (pipe_stall_branch): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2155000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (pipe_l2_alias): regs=31 L1=256 EXT=4096 retired=11 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2405000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 2405000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 4 write(s), 4 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 2405000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 4 store(s) and 4 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]          instruction kinds (model)   9/15   60.0%   MISSING: I_LUI, I_BEQ_NOT_TAKEN, I_JAL, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]     immediates and offsets (model)   3/8    37.5%   MISSING: IMM_NEG, IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]     memory region x op x alignment   4/20   20.0%   MISSING: M_L1_LW_MISALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]              CSR registers (model)   0/20    0.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]               control flow (model)   6/10   60.0%   MISSING: BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]            external load served by   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]    external load: previous -> this   3/9    33.3%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]        stall length by access kind   4/6    66.7%   MISSING: NONE_CSR, NONE_OTHER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]              L2 index touched (64)   1/64    1.6%   MISSING: idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]       L3 index bucket touched (16)   2/16   12.5%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]              events close together   0/4     0.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]                        AXI traffic   4/11   36.4%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]               program size / traps   3/8    37.5%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2405000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 2405000: reporter [COVERAGE] COVERAGE TOTAL: 48/214 bins hit (22.4%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 2405000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 18 access(es) | L1=8 CSR=0 EXT=10 GAP=0 | stalled=8 max_stall=7 | misaligned=0 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 2405000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=1 L3-hit=1 iMC=4 | external stores=4 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 2405000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 60 instruction(s) retired in 6 program(s) | reg_writes=47 stores=7 ecalls=6 | spacing checks=39 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 2405000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=6 match=6 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 2405000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=6 traps=0 misalign=0 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2405000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   37
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     7
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 2405 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614072 KB (Peak: 657180 KB), Simulation CPU Usage: 1280 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:43 2026...
+PASS cpu_pipeline_test
+
+=================== cpu_cache_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:45 2026
+# Process ID         : 29750
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_cache_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_cache_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8601 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_cache_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_cache_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 825000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (cache_levels): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1495000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (cache_wide_data): regs=31 L1=256 EXT=4096 retired=16 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3705000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (cache_conflict): regs=31 L1=256 EXT=4096 retired=66 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (cache_edges): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 4475000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 4475000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 16 write(s), 25 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 4475000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 16 store(s) and 25 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]          instruction kinds (model)   6/15   40.0%   MISSING: I_SUB, I_AND, I_OR, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_JAL, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_NEG, IMM_ZERO, IMM_MAX, IMM_MIN
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]     memory region x op x alignment   4/20   20.0%   MISSING: M_L1_LW_MISALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]              CSR registers (model)   0/20    0.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]               control flow (model)   2/10   20.0%   MISSING: LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]            external load served by   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]    external load: previous -> this   9/9   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]           external store vs caches   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]        stall length by access kind   4/6    66.7%   MISSING: NONE_CSR, NONE_OTHER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]              L2 index touched (64)   3/64    4.7%   MISSING: idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]       L3 index bucket touched (16)   3/16   18.8%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]              events close together   1/4    25.0%   MISSING: STALL_THEN_TRAP, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]                        AXI traffic   5/11   45.5%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]               program size / traps   3/8    37.5%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 4475000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 4475000: reporter [COVERAGE] COVERAGE TOTAL: 55/214 bins hit (25.7%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 4475000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 92 access(es) | L1=2 CSR=0 EXT=90 GAP=0 | stalled=41 max_stall=7 | misaligned=0 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 4475000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=32 L3-hit=17 iMC=25 | external stores=16 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 4475000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 116 instruction(s) retired in 4 program(s) | reg_writes=95 stores=17 ecalls=4 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 4475000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=4 match=4 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 4475000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=4 traps=0 misalign=0 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 4475000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   35
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     5
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 4475 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614080 KB (Peak: 657188 KB), Simulation CPU Usage: 1280 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:49 2026...
+PASS cpu_cache_test
+
+=================== cpu_status_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:52 2026
+# Process ID         : 29858
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_status_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_status_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8580 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_status_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_status_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 375000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (st_misalign_lw_l1): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 805000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (st_misalign_sw_l1): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1235000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (st_misalign_lw_ext): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1665000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (st_misalign_sw_ext): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2095000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (st_misalign_lw_csr): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2515000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (st_misalign_twin): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2825000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 7 (st_oor_hole_lw): regs=30 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0 (1 unknown value(s) not compared)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3135000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 8 (st_oor_hole_sw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3445000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 9 (st_oor_csr_lw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3755000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 10 (st_oor_csr_sw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4065000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 11 (st_oor_twin): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4485000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 12 (st_target_jal): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=0/0/1
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4905000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 13 (st_target_beq_taken): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=0/0/1
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5215000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 14 (st_target_beq_twin): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5525000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 15 (st_shadow_no_fault): regs=31 L1=256 EXT=4096 retired=10 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5995000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 16 (st_trap_after_stall): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6545000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 17 (st_two_traps): regs=31 L1=256 EXT=4096 retired=19 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6855000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 18 (st_quiet_halt): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 7105000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 7105000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 2 write(s), 1 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 7105000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 2 store(s) and 1 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]          instruction kinds (model)  10/15   66.7%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_UNSUPPORTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]     immediates and offsets (model)   5/8    62.5%   MISSING: IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]     memory region x op x alignment  15/20   75.0%   MISSING: M_HOLE_LW_MISALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]                trap causes (model)   4/5    80.0%   MISSING: T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]              CSR registers (model)   6/20   30.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_MTVEC_R, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]               control flow (model)   4/10   40.0%   MISSING: LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_BWD_TAKEN, JAL_BWD
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]            external load served by   1/3    33.3%   MISSING: LD_L2, LD_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]        stall length by access kind   5/6    83.3%   MISSING: NONE_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]              L2 index touched (64)   2/64    3.1%   MISSING: idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]       L3 index bucket touched (16)   1/16    6.2%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]              events close together   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]                        AXI traffic   3/11   27.3%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]               program size / traps   4/8    50.0%   MISSING: TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 7105000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 7105000: reporter [COVERAGE] COVERAGE TOTAL: 70/214 bins hit (32.7%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 7105000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 58 access(es) | L1=7 CSR=44 EXT=5 GAP=2 | stalled=3 max_stall=7 | misaligned=8 oor=4
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 7105000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=1 | external stores=2 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 7105000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 260 instruction(s) retired in 18 program(s) | reg_writes=208 stores=34 ecalls=18 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 7105000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=18 match=18 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 7105000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=18 traps=10 misalign=8 oor=4 target_faults=2
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 7105000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   49
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]    19
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 7105 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614088 KB (Peak: 657188 KB), Simulation CPU Usage: 1420 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:14:56 2026...
+PASS cpu_status_test
+
+=================== cpu_csr_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:14:58 2026
+# Process ID         : 29966
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_csr_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_csr_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8600 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_csr_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_csr_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 325000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (csr_scratch_ro): regs=31 L1=256 EXT=4096 retired=20 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 585000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (csr_align_masks): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1135000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (csr_trap_capture): regs=31 L1=256 EXT=4096 retired=19 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1435000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (csr_mepc_mret): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1825000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (csr_counters): regs=28 L1=256 EXT=4096 retired=19 traps=0 faults(mis/oor/tgt)=0/0/0 (3 unknown value(s) not compared)
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 2075000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 2075000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 0 write(s), 0 read(s) | max_latency=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 2075000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 0 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]          instruction kinds (model)   7/15   46.7%   MISSING: I_ADD, I_AND, I_OR, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_JAL, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]     memory region x op x alignment   4/20   20.0%   MISSING: M_L1_LW_ALIGNED, M_L1_SW_ALIGNED, M_EXT_LW_ALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]                trap causes (model)   2/5    40.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]              CSR registers (model)  20/20  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]               control flow (model)   1/10   10.0%   MISSING: LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]            external load served by   0/3     0.0%   MISSING: LD_L2, LD_L3, LD_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]           external store vs caches   0/4     0.0%   MISSING: ST_L2_HIT, ST_L2_MISS, ST_L3_HIT, ST_L3_MISS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]        stall length by access kind   2/6    33.3%   MISSING: NONE_OTHER, NONE_HIT, ST_4, LD_IMC_7
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]              L2 index touched (64)   0/64    0.0%   MISSING: idx0, idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]       L3 index bucket touched (16)   0/16    0.0%   MISSING: idx0-7, idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]              events close together   2/4    50.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]                        AXI traffic   0/11    0.0%   MISSING: WR_LAT_LE4, WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_5_8, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0400_07FF, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]               program size / traps   4/8    50.0%   MISSING: TRAPS_1, TRAPS_3PLUS, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 2075000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 2075000: reporter [COVERAGE] COVERAGE TOTAL: 50/214 bins hit (23.4%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 2075000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 35 access(es) | L1=2 CSR=33 EXT=0 GAP=0 | stalled=0 max_stall=0 | misaligned=2 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 2075000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=0 | external stores=0 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 2075000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 74 instruction(s) retired in 5 program(s) | reg_writes=55 stores=14 ecalls=5 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 2075000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=5 match=5 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 2075000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=5 traps=2 misalign=2 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 2075000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   36
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     6
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 2075 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614056 KB (Peak: 657176 KB), Simulation CPU Usage: 1290 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:15:02 2026...
+PASS cpu_csr_test
+
+=================== cpu_runoff_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:15:04 2026
+# Process ID         : 30074
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_runoff_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_runoff_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8623 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_runoff_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_runoff_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 205000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (runoff_fallthrough): regs=31 L1=256 EXT=4096 retired=4 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 445000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (runoff_branch_wrap): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 675000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (runoff_jal_wrap): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 925000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 925000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 0 write(s), 0 read(s) | max_latency=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 925000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 0 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]          instruction kinds (model)   5/15   33.3%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_LUI, I_LW, I_SW, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]     immediates and offsets (model)   1/8    12.5%   MISSING: IMM_NEG, IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG, OFF_ZERO, OFF_POS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]     memory region x op x alignment   0/20    0.0%   MISSING: M_L1_LW_ALIGNED, M_L1_LW_MISALIGNED, M_L1_SW_ALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_ALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_ALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]              CSR registers (model)   0/20    0.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_HALT_W, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MTVEC_W, C_MEPC_R, C_MEPC_W, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]     dependencies, load-use (model)   1/3    33.3%   MISSING: D_DIST1, D_DIST3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]               control flow (model)   3/10   30.0%   MISSING: LU_ALU_RS1, LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_BWD_TAKEN, JAL_BWD
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]            external load served by   0/3     0.0%   MISSING: LD_L2, LD_L3, LD_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]    external load: previous -> this   0/9     0.0%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3, IMC_to_IMC
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]           external store vs caches   0/4     0.0%   MISSING: ST_L2_HIT, ST_L2_MISS, ST_L3_HIT, ST_L3_MISS
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]        stall length by access kind   0/6     0.0%   MISSING: NONE_L1, NONE_CSR, NONE_OTHER, NONE_HIT, ST_4, LD_IMC_7
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]              L2 index touched (64)   0/64    0.0%   MISSING: idx0, idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]       L3 index bucket touched (16)   0/16    0.0%   MISSING: idx0-7, idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx64-71, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]              events close together   0/4     0.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]                        AXI traffic   0/11    0.0%   MISSING: WR_LAT_LE4, WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_5_8, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0400_07FF, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_11_50, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 925000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 925000: reporter [COVERAGE] COVERAGE TOTAL: 13/214 bins hit (6.1%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 925000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 0 access(es) | L1=0 CSR=0 EXT=0 GAP=0 | stalled=0 max_stall=0 | misaligned=0 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 925000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=0 | external stores=0 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 925000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 10 instruction(s) retired in 3 program(s) | reg_writes=7 stores=0 ecalls=3 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 925000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=3 match=3 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 925000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=3 traps=0 misalign=0 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 925000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   34
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]     4
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 925 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614028 KB (Peak: 657180 KB), Simulation CPU Usage: 1260 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:15:09 2026...
+PASS cpu_runoff_test
+
+=================== cpu_reset_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:15:11 2026
+# Process ID         : 30182
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_reset_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_reset_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8599 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_reset_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_reset_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 105000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 1 'reset_victim_at_4' aborted by reset after 4 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 515000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 725000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 3 'reset_victim_at_9' aborted by reset after 9 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1135000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 1405000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 5 'reset_victim_at_15' aborted by reset after 15 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1815000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 2155000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 7 'reset_victim_at_22' aborted by reset after 22 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2565000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 8 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 2965000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 9 'reset_victim_at_28' aborted by reset after 28 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3375000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 10 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 3835000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 11 'reset_victim_at_34' aborted by reset after 34 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4245000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 12 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 4775000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 13 'reset_victim_at_41' aborted by reset after 41 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5185000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 14 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 5805000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 15 'reset_victim_at_50' aborted by reset after 50 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6215000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 16 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 6935000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 17 'reset_victim_at_60' aborted by reset after 60 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 7345000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 18 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 8215000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 19 'reset_victim_at_75' aborted by reset after 75 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 8625000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 20 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 9035000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 21 'reset_victim_at_29' aborted by reset after 29 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 9445000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 22 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 10105000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 23 'reset_victim_at_54' aborted by reset after 54 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 10515000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 24 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 11295000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 25 'reset_victim_at_66' aborted by reset after 66 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 11705000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 26 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 12075000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 27 'reset_victim_at_25' aborted by reset after 25 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 12485000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 28 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 13065000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 29 'reset_victim_at_46' aborted by reset after 46 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 13475000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 30 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 13715000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 31 'reset_victim_at_12' aborted by reset after 12 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 32 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 14375000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 14375000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 24 write(s), 47 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 14375000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 0 store(s) and 32 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=16
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]          instruction kinds (model)   3/15   20.0%   MISSING: I_ADD, I_SUB, I_AND, I_OR, I_LUI, I_SW, I_BEQ_TAKEN, I_BEQ_NOT_TAKEN, I_JAL, I_MRET, I_UNSUPPORTED, I_WRITES_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]     immediates and offsets (model)   4/8    50.0%   MISSING: IMM_ZERO, IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]     memory region x op x alignment   3/20   15.0%   MISSING: M_L1_LW_MISALIGNED, M_L1_SW_ALIGNED, M_L1_SW_MISALIGNED, M_EXT_LW_MISALIGNED, M_EXT_SW_ALIGNED, M_EXT_SW_MISALIGNED, M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_ALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]                trap causes (model)   0/5     0.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_LOAD_MIS, T_STORE_MIS, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]              CSR registers (model)   6/20   30.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_W, C_SCRATCH_W, C_MTVEC_W, C_MEPC_W, C_MCAUSE_W, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]                halt styles (model)   1/4    25.0%   MISSING: H_SW, H_AFTER_TAKEN, H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]     dependencies, load-use (model)   0/3     0.0%   MISSING: D_DIST1, D_DIST2, D_DIST3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]               control flow (model)   0/10    0.0%   MISSING: LU_ALU_RS1, LU_ALU_RS2, LU_BASE, LU_STORE_DATA, LU_BRANCH, BEQ_FWD_TAKEN, BEQ_BWD_TAKEN, JAL_FWD, JAL_BWD, BEQ_CMP_X0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]            external load served by   1/3    33.3%   MISSING: LD_L2, LD_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]    external load: previous -> this   1/9    11.1%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]        stall length by access kind   4/6    66.7%   MISSING: NONE_OTHER, NONE_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]              L2 index touched (64)   1/64    1.6%   MISSING: idx1, idx2, idx3, idx4, idx5, idx6, idx7, idx8, idx9, idx10, idx11, idx12, idx13, idx14, idx15, idx16, idx17, idx18, idx19, idx20, idx21, idx22, idx23, idx24, idx25, idx26, idx27, idx28, idx29, idx30, idx31, idx32, idx33, idx34, idx35, idx36, idx37, idx38, idx39, idx40, idx41, idx42, idx43, idx44, idx45, idx46, idx47, idx48, idx49, idx50, idx51, idx52, idx53, idx54, idx55, idx56, idx57, idx58, idx59, idx60, idx61, idx62, idx63
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]       L3 index bucket touched (16)   2/16   12.5%   MISSING: idx8-15, idx16-23, idx24-31, idx32-39, idx40-47, idx48-55, idx56-63, idx72-79, idx80-87, idx88-95, idx96-103, idx104-111, idx112-119, idx120-127
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]              events close together   0/4     0.0%   MISSING: STALL_THEN_TRAP, STALL_THEN_HALT, HALT_AFTER_TRAP, TRAP_AFTER_TRAP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]                        AXI traffic   4/11   36.4%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]               program size / traps   2/8    25.0%   MISSING: TRAPS_1, TRAPS_2, TRAPS_3PLUS, STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 14375000: reporter [COVERAGE]           reset cut point (clocks)   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 14375000: reporter [COVERAGE] COVERAGE TOTAL: 38/214 bins hit (17.8%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 14375000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 273 access(es) | L1=66 CSR=136 EXT=71 GAP=0 | stalled=71 max_stall=7 | misaligned=6 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 14375000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=47 | external stores=24 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 14375000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 473 instruction(s) retired in 32 program(s) | reg_writes=371 stores=86 ecalls=16 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 14375000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=16 match=16 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 14375000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=16 traps=6 misalign=6 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 14375000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   63
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_DRIVER]    16
+[CPU_SB]    17
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 14375 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614072 KB (Peak: 657176 KB), Simulation CPU Usage: 1350 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:15:15 2026...
+PASS cpu_reset_test
+
+=================== cpu_rand_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:15:17 2026
+# Process ID         : 30290
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_rand_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_rand_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8586 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_rand_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_rand_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 725000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (random_0): regs=31 L1=256 EXT=4096 retired=27 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (random_1): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2285000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (random_2): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3095000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (random_3): regs=31 L1=256 EXT=4096 retired=20 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3785000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (random_4): regs=31 L1=256 EXT=4096 retired=24 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4285000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (random_5): regs=31 L1=256 EXT=4096 retired=15 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5345000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 7 (random_6): regs=31 L1=256 EXT=4096 retired=35 traps=4 faults(mis/oor/tgt)=4/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6025000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 8 (random_7): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6885000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 9 (random_8): regs=31 L1=256 EXT=4096 retired=23 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 7815000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 10 (random_9): regs=31 L1=256 EXT=4096 retired=28 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 8485000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 11 (random_10): regs=31 L1=256 EXT=4096 retired=23 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 9175000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 12 (random_11): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 9935000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 13 (random_12): regs=31 L1=256 EXT=4096 retired=33 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 10845000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 14 (random_13): regs=31 L1=256 EXT=4096 retired=31 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 11515000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 15 (random_14): regs=31 L1=256 EXT=4096 retired=33 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 12385000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 16 (random_15): regs=31 L1=256 EXT=4096 retired=26 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 13425000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 17 (random_16): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14065000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 18 (random_17): regs=31 L1=256 EXT=4096 retired=23 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14735000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 19 (random_18): regs=31 L1=256 EXT=4096 retired=23 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 15315000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 20 (random_19): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 16155000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 21 (random_20): regs=31 L1=256 EXT=4096 retired=30 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 17165000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 22 (random_21): regs=31 L1=256 EXT=4096 retired=33 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 18135000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 23 (random_22): regs=31 L1=256 EXT=4096 retired=31 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 18795000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 24 (random_23): regs=31 L1=256 EXT=4096 retired=20 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 19715000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 25 (random_24): regs=31 L1=256 EXT=4096 retired=26 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 20805000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 26 (random_25): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 21355000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 27 (random_26): regs=31 L1=256 EXT=4096 retired=21 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 22385000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 28 (random_27): regs=31 L1=256 EXT=4096 retired=27 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 23365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 29 (random_28): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 24105000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 30 (random_29): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 25095000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 31 (random_30): regs=31 L1=256 EXT=4096 retired=33 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 25805000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 32 (random_31): regs=31 L1=256 EXT=4096 retired=29 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 26655000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 33 (random_32): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 27675000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 34 (random_33): regs=31 L1=256 EXT=4096 retired=29 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 28545000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 35 (random_34): regs=31 L1=256 EXT=4096 retired=35 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 29245000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 36 (random_35): regs=31 L1=256 EXT=4096 retired=29 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 30235000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 37 (random_36): regs=31 L1=256 EXT=4096 retired=33 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 31095000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 38 (random_37): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 32185000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 39 (random_38): regs=31 L1=256 EXT=4096 retired=30 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 33155000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 40 (random_39): regs=31 L1=256 EXT=4096 retired=30 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 34055000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 41 (random_40): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 35075000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 42 (random_41): regs=31 L1=256 EXT=4096 retired=28 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 35685000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 43 (random_42): regs=31 L1=256 EXT=4096 retired=23 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 36545000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 44 (random_43): regs=31 L1=256 EXT=4096 retired=27 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 37475000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 45 (random_44): regs=31 L1=256 EXT=4096 retired=26 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 38225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 46 (random_45): regs=31 L1=256 EXT=4096 retired=26 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 38935000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 47 (random_46): regs=31 L1=256 EXT=4096 retired=21 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 39585000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 48 (random_47): regs=31 L1=256 EXT=4096 retired=23 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 40395000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 49 (random_48): regs=31 L1=256 EXT=4096 retired=29 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 41335000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 50 (random_49): regs=31 L1=256 EXT=4096 retired=26 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 41585000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 41585000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 55 write(s), 109 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 41585000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 55 store(s) and 109 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]          instruction kinds (model)  14/15   93.3%   MISSING: I_UNSUPPORTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]     immediates and offsets (model)   5/8    62.5%   MISSING: IMM_MAX, IMM_MIN, OFF_NEG
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]     memory region x op x alignment  10/20   50.0%   MISSING: M_HOLE_LW_ALIGNED, M_HOLE_LW_MISALIGNED, M_HOLE_SW_ALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_LW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_ALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_ALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]                trap causes (model)   2/5    40.0%   MISSING: T_TARGET_JAL, T_TARGET_BEQ, T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]              CSR registers (model)   4/20   20.0%   MISSING: C_CYCLE_R, C_CYCLE_W, C_INSTR_R, C_INSTR_W, C_HALT_R, C_SCRATCH_R, C_SCRATCH_W, C_MTVEC_R, C_MCAUSE_R, C_MCAUSE_W, C_MTVAL_R, C_MTVAL_W, C_RO_WRITE, C_MTVEC_LOW_BITS, C_MEPC_LOW_BITS, C_HALT_BIT0_CLEAR
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]                halt styles (model)   3/4    75.0%   MISSING: H_IN_HANDLER
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]               control flow (model)   7/10   70.0%   MISSING: LU_BASE, BEQ_BWD_TAKEN, JAL_BWD
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]            external load served by   1/3    33.3%   MISSING: LD_L2, LD_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]    external load: previous -> this   1/9    11.1%   MISSING: L2_to_L2, L2_to_L3, L2_to_IMC, L3_to_L2, L3_to_L3, L3_to_IMC, IMC_to_L2, IMC_to_L3
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]           external store vs caches   2/4    50.0%   MISSING: ST_L2_HIT, ST_L3_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]        stall length by access kind   5/6    83.3%   MISSING: NONE_HIT
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]              L2 index touched (64)  58/64   90.6%   MISSING: idx3, idx23, idx28, idx31, idx46, idx53
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]       L3 index bucket touched (16)  16/16  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]              events close together   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]                        AXI traffic   3/11   27.3%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, READ_AFTER_WRITE_SAME_ADDR, ADDR_0800_0FFF, ADDR_1000_UP
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]               program size / traps   5/8    62.5%   MISSING: STEPS_LE10, STEPS_51_200, STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 41585000: reporter [COVERAGE]           reset cut point (clocks)   0/4     0.0%   MISSING: RST_LE8, RST_9_24, RST_25_50, RST_GT50
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 41585000: reporter [COVERAGE] COVERAGE TOTAL: 143/214 bins hit (66.8%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 41585000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 602 access(es) | L1=210 CSR=194 EXT=198 GAP=0 | stalled=164 max_stall=7 | misaligned=58 oor=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 41585000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=0 L3-hit=0 iMC=109 | external stores=55 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 41585000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 1366 instruction(s) retired in 50 program(s) | reg_writes=1089 stores=255 ecalls=22 | spacing checks=0 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 41585000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=50 match=50 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 41585000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=50 traps=58 misalign=58 oor=0 target_faults=0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 41585000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   81
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_SB]    51
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 41585 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614092 KB (Peak: 657188 KB), Simulation CPU Usage: 1530 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:15:21 2026...
+PASS cpu_rand_test
+
+=================== cpu_regression_test ===================
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Tue Oct 27 02:15:23 2026
+# Process ID         : 30398
+# Current directory  : /work/RV32i_new_str/sim/uvm_run/build
+# Command line       : xsim -log /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_regression_test.log -mode tcl -source {xsim.dir/snap/xsim_script.tcl}
+# Log file           : /work/RV32i_new_str/sim/uvm_run/build/xsim_cpu_regression_test.log
+# Journal file       : /work/RV32i_new_str/sim/uvm_run/build/xsim.jou
+# Running On         : db6a1bc9baa4
+# Platform           : ubuntu
+# Operating System   : Ubuntu"
+VERSION_ID="22.04 22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+# Processor Detail   : VirtualApple @ 2.50GHz
+# CPU Frequency      : 2502.057 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 10
+# Host memory        : 8217 MB
+# Swap memory        : 1073 MB
+# Total Virtual      : 9291 MB
+# Available Virtual  : 8579 MB
+#-----------------------------------------------------------
+source xsim.dir/snap/xsim_script.tcl
+# xsim {snap} -testplusarg UVM_TESTNAME=cpu_regression_test -testplusarg UVM_VERBOSITY=UVM_LOW -autoloadwcfg -runall
+Time resolution is 1 ps
+run -all
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18601) @ 0: reporter [UVM/RELNOTES] 
+----------------------------------------------------------------
+UVM-1.2
+(C) 2007-2014 Mentor Graphics Corporation
+(C) 2007-2014 Cadence Design Systems, Inc.
+(C) 2006-2014 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+(C) 2013-2014 NVIDIA Corporation
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(18648) @ 0: reporter [NO_DPI_TSTNAME] UVM_NO_DPI defined--getting UVM_TESTNAME directly, without DPI
+UVM_INFO @ 0: reporter [RNTST] Running test cpu_regression_test...
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(20867) @ 0: reporter [UVM/COMP/NAMECHECK] This implementation of the component name checks requires DPI to be enabled
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 325000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 1 (hazard_branch_jump): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1195000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 2 (misalign_trap_lw_sw_jal): regs=31 L1=256 EXT=4096 retired=34 traps=4 faults(mis/oor/tgt)=3/0/1
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1405000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 3 (halt_ecall): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1685000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 4 (halt_software_csr): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 1945000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 5 (halt_during_ext_store): regs=31 L1=256 EXT=4096 retired=4 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 6 (halt_after_ext_miss): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2455000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 7 (halt_after_taken_branch): regs=31 L1=256 EXT=4096 retired=2 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2725000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 8 (halt_in_trap_handler): regs=31 L1=256 EXT=4096 retired=5 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 2995000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 9 (halt_sw_after_ext_store): regs=31 L1=256 EXT=4096 retired=5 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3195000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 10 (halt_back_to_back): regs=31 L1=256 EXT=4096 retired=2 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 3875000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 11 (mem_ext_traffic): regs=31 L1=256 EXT=4096 retired=15 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4185000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 12 (mem_csr_and_gap): regs=29 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/2/0 (2 unknown value(s) not compared)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 4515000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 13 (decode_imm_extremes): regs=31 L1=256 EXT=4096 retired=15 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 5395000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 14 (decode_ldst_modes): regs=31 L1=256 EXT=4096 retired=23 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6075000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 15 (decode_branches): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6465000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 16 (decode_rd_x0): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 6915000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 17 (decode_unsupported): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 7205000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 18 (pipe_nostall): regs=31 L1=256 EXT=4096 retired=11 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 7465000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 19 (pipe_forward_chain): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 7825000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 20 (pipe_loaduse): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 8225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 21 (pipe_stall_resume): regs=31 L1=256 EXT=4096 retired=10 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 8615000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 22 (pipe_stall_branch): regs=31 L1=256 EXT=4096 retired=6 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 9125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 23 (pipe_l2_alias): regs=31 L1=256 EXT=4096 retired=11 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 10005000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 24 (cache_levels): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 10675000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 27 (cache_wide_data): regs=31 L1=256 EXT=4096 retired=16 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 13555000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 25 (cache_conflict): regs=31 L1=256 EXT=4096 retired=66 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14075000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 26 (cache_edges): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14505000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 28 (st_misalign_lw_l1): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 14935000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 29 (st_misalign_sw_l1): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 15365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 30 (st_misalign_lw_ext): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 15795000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 31 (st_misalign_sw_ext): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 16225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 32 (st_misalign_lw_csr): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 16645000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 33 (st_misalign_twin): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 16955000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 34 (st_oor_hole_lw): regs=30 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0 (1 unknown value(s) not compared)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 17265000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 35 (st_oor_hole_sw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 17575000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 36 (st_oor_csr_lw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 17885000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 37 (st_oor_csr_sw): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/1/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 18195000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 38 (st_oor_twin): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 18615000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 39 (st_target_jal): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=0/0/1
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 19035000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 40 (st_target_beq_taken): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=0/0/1
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 19345000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 41 (st_target_beq_twin): regs=31 L1=256 EXT=4096 retired=12 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 19655000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 42 (st_shadow_no_fault): regs=31 L1=256 EXT=4096 retired=10 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 20125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 43 (st_trap_after_stall): regs=31 L1=256 EXT=4096 retired=16 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 20675000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 44 (st_two_traps): regs=31 L1=256 EXT=4096 retired=19 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 20985000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 45 (st_quiet_halt): regs=31 L1=256 EXT=4096 retired=13 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 21365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 46 (csr_scratch_ro): regs=31 L1=256 EXT=4096 retired=20 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 21625000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 47 (csr_align_masks): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 22175000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 48 (csr_trap_capture): regs=31 L1=256 EXT=4096 retired=19 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 22475000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 49 (csr_mepc_mret): regs=31 L1=256 EXT=4096 retired=8 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 22865000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 50 (csr_counters): regs=28 L1=256 EXT=4096 retired=19 traps=0 faults(mis/oor/tgt)=0/0/0 (3 unknown value(s) not compared)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 23125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 51 (runoff_fallthrough): regs=31 L1=256 EXT=4096 retired=4 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 23365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 52 (runoff_branch_wrap): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 23595000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 53 (runoff_jal_wrap): regs=31 L1=256 EXT=4096 retired=3 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 23755000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 54 'reset_victim_at_4' aborted by reset after 4 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 24165000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 55 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 24375000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 56 'reset_victim_at_9' aborted by reset after 9 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 24785000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 57 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 25055000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 58 'reset_victim_at_15' aborted by reset after 15 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 25465000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 59 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 25805000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 60 'reset_victim_at_22' aborted by reset after 22 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 26215000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 61 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 26615000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 62 'reset_victim_at_28' aborted by reset after 28 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 27025000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 63 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 27485000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 64 'reset_victim_at_34' aborted by reset after 34 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 27895000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 65 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 28425000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 66 'reset_victim_at_41' aborted by reset after 41 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 28835000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 67 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 29455000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 68 'reset_victim_at_50' aborted by reset after 50 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 29865000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 69 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 30585000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 70 'reset_victim_at_60' aborted by reset after 60 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 30995000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 71 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 31865000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 72 'reset_victim_at_75' aborted by reset after 75 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 32275000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 73 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 32785000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 74 'reset_victim_at_39' aborted by reset after 39 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 33195000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 75 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 33825000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 76 'reset_victim_at_51' aborted by reset after 51 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 34235000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 77 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 35135000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 78 'reset_victim_at_78' aborted by reset after 78 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 35545000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 79 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 36115000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 80 'reset_victim_at_45' aborted by reset after 45 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 36525000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 81 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 36865000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 82 'reset_victim_at_22' aborted by reset after 22 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 37275000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 83 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_driver.sv(68) @ 38275000: uvm_test_top.env.ctrl_agent.driver [CPU_DRIVER] program 84 'reset_victim_at_88' aborted by reset after 88 clock(s) (pc was 0x00000000)
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 38685000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 85 (reset_probe): regs=31 L1=256 EXT=4096 retired=14 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 39845000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 86 (random_0): regs=31 L1=256 EXT=4096 retired=37 traps=4 faults(mis/oor/tgt)=4/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 40545000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 87 (random_1): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 41335000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 88 (random_2): regs=31 L1=256 EXT=4096 retired=25 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 41975000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 89 (random_3): regs=31 L1=256 EXT=4096 retired=25 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 42695000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 90 (random_4): regs=31 L1=256 EXT=4096 retired=29 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 43495000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 91 (random_5): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 44125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 92 (random_6): regs=31 L1=256 EXT=4096 retired=21 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 44985000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 93 (random_7): regs=31 L1=256 EXT=4096 retired=30 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 45845000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 94 (random_8): regs=31 L1=256 EXT=4096 retired=30 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 46905000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 95 (random_9): regs=31 L1=256 EXT=4096 retired=34 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 48115000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 96 (random_10): regs=31 L1=256 EXT=4096 retired=36 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 48735000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 97 (random_11): regs=31 L1=256 EXT=4096 retired=23 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 49535000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 98 (random_12): regs=31 L1=256 EXT=4096 retired=25 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 50365000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 99 (random_13): regs=31 L1=256 EXT=4096 retired=25 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 51615000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 100 (random_14): regs=31 L1=256 EXT=4096 retired=35 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 52205000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 101 (random_15): regs=31 L1=256 EXT=4096 retired=24 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 53005000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 102 (random_16): regs=31 L1=256 EXT=4096 retired=21 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 53895000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 103 (random_17): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 54585000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 104 (random_18): regs=31 L1=256 EXT=4096 retired=20 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 55435000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 105 (random_19): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 56535000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 106 (random_20): regs=31 L1=256 EXT=4096 retired=37 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 57125000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 107 (random_21): regs=31 L1=256 EXT=4096 retired=20 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 58055000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 108 (random_22): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 59015000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 109 (random_23): regs=31 L1=256 EXT=4096 retired=32 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 60105000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 110 (random_24): regs=31 L1=256 EXT=4096 retired=37 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 61035000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 111 (random_25): regs=31 L1=256 EXT=4096 retired=26 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 61935000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 112 (random_26): regs=31 L1=256 EXT=4096 retired=26 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 62635000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 113 (random_27): regs=31 L1=256 EXT=4096 retired=24 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 63565000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 114 (random_28): regs=31 L1=256 EXT=4096 retired=28 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 64575000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 115 (random_29): regs=31 L1=256 EXT=4096 retired=38 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 65605000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 116 (random_30): regs=31 L1=256 EXT=4096 retired=36 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 66445000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 117 (random_31): regs=31 L1=256 EXT=4096 retired=25 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 67645000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 118 (random_32): regs=31 L1=256 EXT=4096 retired=35 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 68325000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 119 (random_33): regs=31 L1=256 EXT=4096 retired=17 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 68985000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 120 (random_34): regs=31 L1=256 EXT=4096 retired=27 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 69555000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 121 (random_35): regs=31 L1=256 EXT=4096 retired=21 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 70345000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 122 (random_36): regs=31 L1=256 EXT=4096 retired=30 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 71505000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 123 (random_37): regs=31 L1=256 EXT=4096 retired=35 traps=3 faults(mis/oor/tgt)=3/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 72325000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 124 (random_38): regs=31 L1=256 EXT=4096 retired=28 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 73165000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 125 (random_39): regs=31 L1=256 EXT=4096 retired=26 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 74005000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 126 (random_40): regs=31 L1=256 EXT=4096 retired=26 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 74615000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 127 (random_41): regs=31 L1=256 EXT=4096 retired=22 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 75215000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 128 (random_42): regs=31 L1=256 EXT=4096 retired=21 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 76225000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 129 (random_43): regs=31 L1=256 EXT=4096 retired=36 traps=2 faults(mis/oor/tgt)=2/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 76985000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 130 (random_44): regs=31 L1=256 EXT=4096 retired=31 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 77605000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 131 (random_45): regs=31 L1=256 EXT=4096 retired=24 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 78335000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 132 (random_46): regs=31 L1=256 EXT=4096 retired=18 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 78915000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 133 (random_47): regs=31 L1=256 EXT=4096 retired=18 traps=0 faults(mis/oor/tgt)=0/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 79715000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 134 (random_48): regs=31 L1=256 EXT=4096 retired=31 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(158) @ 80485000: uvm_test_top.env.scoreboard [CPU_SB] MATCH prog 135 (random_49): regs=31 L1=256 EXT=4096 retired=25 traps=1 faults(mis/oor/tgt)=1/0/0
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(19968) @ 80735000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(268) @ 80735000: uvm_test_top.env.axi_checker [AXI_CHECKER] axi_checker summary: 131 write(s), 216 read(s) | max_latency=5
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(241) @ 80735000: uvm_test_top.env.bus_checker [BUS_CHECKER] bus_checker summary: 105 store(s) and 197 iMC-served load(s) matched against AXI | errors=0 | programs aborted by reset=16
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]          instruction kinds (model)  15/15  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]     immediates and offsets (model)   8/8   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]     memory region x op x alignment  15/20   75.0%   MISSING: M_HOLE_LW_MISALIGNED, M_HOLE_SW_MISALIGNED, M_CSR_IN_SW_MISALIGNED, M_CSR_BEYOND_LW_MISALIGNED, M_CSR_BEYOND_SW_MISALIGNED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]                trap causes (model)   4/5    80.0%   MISSING: T_NESTED
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]              CSR registers (model)  20/20  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]                halt styles (model)   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]     dependencies, load-use (model)   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]               control flow (model)  10/10  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]            external load served by   3/3   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]    external load: previous -> this   9/9   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]           external store vs caches   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]        stall length by access kind   6/6   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]              L2 index touched (64)  59/64   92.2%   MISSING: idx6, idx7, idx23, idx27, idx49
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]       L3 index bucket touched (16)  16/16  100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]              events close together   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]                        AXI traffic   5/11   45.5%   MISSING: WR_LAT_5_8, WR_LAT_GT8, RD_LAT_LE4, RD_LAT_GT8, BACK_TO_BACK, ADDR_0800_0FFF
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]               program size / traps   7/8    87.5%   MISSING: STEPS_GT200
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(47) @ 80735000: reporter [COVERAGE]           reset cut point (clocks)   4/4   100.0%
+UVM_INFO /work/RV32i_new_str/tb/cpu_coverage.sv(50) @ 80735000: reporter [COVERAGE] COVERAGE TOTAL: 196/214 bins hit (91.6%)
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(161) @ 80735000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker summary: 1147 access(es) | L1=308 CSR=419 EXT=416 GAP=4 | stalled=347 max_stall=7 | misaligned=72 oor=6
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(163) @ 80735000: uvm_test_top.env.mem_checker [MEM_CHECKER] mem_checker cache levels: loads L2-hit=24 L3-hit=17 iMC=216 | external stores=131 | level errors=0 stall errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(70) @ 80735000: uvm_test_top.env.retire_checker [RETIRE_CHECKER] retire_checker summary: 2605 instruction(s) retired in 135 program(s) | reg_writes=2064 stores=449 ecalls=92 | spacing checks=39 errors=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_scoreboard.sv(176) @ 80735000: uvm_test_top.env.scoreboard [CPU_SB] SUMMARY: observed=119 match=119 mismatch=0 unpredicted=0 skipped=0
+UVM_INFO /work/RV32i_new_str/tb/cpu_checkers.sv(299) @ 80735000: uvm_test_top.env.status_checker [STATUS_CHECKER] status_checker summary: halts=119 traps=75 misalign=72 oor=6 target_faults=3
+UVM_INFO /opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv(13673) @ 80735000: reporter [UVM/REPORT/SERVER] 
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  166
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_CHECKER]     1
+[BUS_CHECKER]     1
+[COVERAGE]    19
+[CPU_DRIVER]    16
+[CPU_SB]   120
+[MEM_CHECKER]     2
+[NO_DPI_TSTNAME]     1
+[RETIRE_CHECKER]     1
+[RNTST]     1
+[STATUS_CHECKER]     1
+[TEST_DONE]     1
+[UVM/COMP/NAMECHECK]     1
+[UVM/RELNOTES]     1
+
+$finish called at time : 80735 ns : File "/opt/Xilinx/2025.2/Vivado/data/system_verilog/uvm_1.2/xlnx_uvm_package.sv" Line 18699
+exit
+INFO: xsimkernel Simulation Memory Usage: 614180 KB (Peak: 657180 KB), Simulation CPU Usage: 1910 ms
+INFO: [Common 17-206] Exiting xsim at Tue Oct 27 02:15:28 2026...
+PASS cpu_regression_test
